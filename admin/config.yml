@@ -1,0 +1,293 @@
+# ============================================================================
+# Espace équipe TRIADE — configuration de l'éditeur (Sveltia CMS)
+# Adresse : <adresse du site>/admin/
+# Chaque « collection » ci-dessous est un menu à gauche de l'éditeur ;
+# chaque « field » est une case à remplir. Les libellés et les aides (hint)
+# sont en français : on peut les reformuler sans rien casser.
+# ============================================================================
+
+backend:
+  name: github
+  repo: tanguyruel/triade   # À changer si le dépôt est renommé ou déplacé
+  branch: main
+  commit_messages:
+    create: "Site : ajout dans {{collection}}"
+    update: "Site : mise à jour de {{collection}}"
+    delete: "Site : suppression dans {{collection}}"
+    uploadMedia: "Site : ajout de la photo {{path}}"
+    deleteMedia: "Site : suppression de la photo {{path}}"
+
+locale: fr
+site_url: https://tanguyruel.github.io/triade/
+display_url: https://tanguyruel.github.io/triade/
+logo_url: https://tanguyruel.github.io/triade/assets/img/logo-triade.png
+
+# Où vont les photos envoyées depuis l'éditeur.
+# Elles sont automatiquement réduites (2000 px max) et converties en WebP :
+# on peut envoyer les photos du téléphone telles quelles.
+media_folder: /photos
+public_folder: /photos
+media_libraries:
+  default:
+    config:
+      slugify_filename: true
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 2000
+          height: 2000
+        svg:
+          optimize: true
+
+collections:
+
+  # --------------------------------------------------------------------------
+  - name: carnet
+    label: "Journal de bord (photos et récits)"
+    icon: edit_note
+    files:
+      - name: carnet
+        label: "Journal de bord"
+        file: content/carnet.json
+        fields:
+          - label: "Entrées du journal"
+            name: jours
+            widget: list
+            label_singular: "entrée"
+            add_to_top: true
+            summary: "{{fields.date}} — {{fields.titre}} {{fields.lieu}}"
+            hint: "Une entrée = une journée ou un moment. Cliquez sur « Ajouter » pour en créer une. Seule la date est obligatoire."
+            fields:
+              - { label: "Date et heure", name: date, widget: datetime, date_format: "DD/MM/YYYY", time_format: "HH:mm", format: "YYYY-MM-DD HH:mm", default: "{{now}}", picker_utc: false, hint: "L'heure sert à afficher « mis à jour le … à … » dans le bandeau « Position en direct » en haut du site." }
+              - { label: "Auteur", name: auteur, widget: select, options: ["Titouan", "Tanguy", "Téo", "L'équipe"], required: false, hint: "Affiché sur la carte : « Par Tanguy »." }
+              - { label: "Lieu", name: lieu, widget: string, required: false, hint: "Ville ou village. La dernière entrée datée devient la « position en direct » du site. Exemple : Split" }
+              - { label: "Pays", name: pays, widget: string, required: false, hint: "Exemple : Croatie" }
+              - { label: "Titre", name: titre, widget: string, required: false, hint: "Une phrase courte et accrocheuse. Si vide, le lieu sert de titre." }
+              - label: "Texte"
+                name: texte
+                widget: markdown
+                required: false
+                buttons: [bold, italic, link, heading-two, bulleted-list, quote]
+                editor_components: []
+                modes: [rich_text]
+                hint: "Le récit de la journée. Facultatif : une entrée peut être juste des photos."
+              - { label: "Photos", name: photos, widget: image, multiple: true, required: false, hint: "Choisissez plusieurs photos d'un coup. Elles s'affichent en mosaïque et s'agrandissent au clic." }
+              - { label: "Vidéo (lien YouTube, Instagram ou TikTok)", name: video, widget: string, required: false, hint: "Collez l'adresse de la vidéo. YouTube se lit sur le site ; les autres ouvrent un lien." }
+
+  # --------------------------------------------------------------------------
+  - name: interviews
+    label: "Interviews et rencontres"
+    icon: record_voice_over
+    files:
+      - name: interviews
+        label: "Interviews"
+        file: content/interviews.json
+        fields:
+          - label: "Interviews"
+            name: interviews
+            widget: list
+            label_singular: "interview"
+            add_to_top: true
+            summary: "{{fields.association}} — {{fields.personne}}"
+            hint: "Une interview s'affiche sur la page « Rencontres » ET sur la fiche de son association."
+            fields:
+              - label: "Association"
+                name: association
+                widget: select
+                options: ["Rewilding Apennines", "PPNEA", "ARCTUROS", "EuroNatur", "NABU", "Autre rencontre"]
+                hint: "Choisissez « Autre rencontre » si la personne n'appartient à aucune des cinq associations."
+              - { label: "Nom de la personne", name: personne, widget: string }
+              - { label: "Rôle", name: role, widget: string, required: false, hint: "Exemple : garde-nature, chercheuse, bénévole" }
+              - { label: "Date", name: date, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false }
+              - { label: "Phrase à retenir", name: citation, widget: text, required: false, hint: "La citation forte, mise en avant en grand. Sans guillemets : le site les ajoute." }
+              - { label: "Photo", name: photo, widget: image, required: false }
+              - { label: "Vidéo (lien YouTube, Instagram ou TikTok)", name: video, widget: string, required: false }
+              - label: "Interview complète (texte)"
+                name: texte
+                widget: markdown
+                required: false
+                buttons: [bold, italic, link, heading-two, bulleted-list, quote]
+                editor_components: []
+                modes: [rich_text]
+                hint: "Questions et réponses, ou résumé. S'affiche dans « Lire l'interview »."
+
+  # --------------------------------------------------------------------------
+  - name: associations
+    label: "Associations"
+    icon: forest
+    files:
+      - name: associations
+        label: "Les cinq associations"
+        file: content/associations.json
+        fields:
+          - label: "Associations"
+            name: associations
+            widget: list
+            label_singular: "association"
+            summary: "{{fields.nom}} — {{fields.statut}}"
+            hint: "Pour faire avancer une association : changez simplement son « Statut »."
+            fields:
+              - { label: "Nom", name: nom, widget: string, hint: "Si vous changez un nom, changez-le aussi dans la liste « Association » des interviews." }
+              - { label: "Pays", name: pays, widget: string }
+              - { label: "Lieu précis", name: zone, widget: string, required: false }
+              - { label: "Espèce ou cause", name: espece, widget: string, hint: "Exemple : Lynx des Balkans" }
+              - { label: "Quand passons-nous ?", name: periode, widget: string, hint: "Date vague. Exemple : Début avril" }
+              - label: "Statut"
+                name: statut
+                widget: select
+                options: ["Contact en cours", "Rencontre confirmée", "Rencontre réalisée"]
+              - { label: "Logo", name: logo, widget: image, required: false }
+              - label: "Présentation"
+                name: description
+                widget: markdown
+                buttons: [bold, italic, link]
+                editor_components: []
+                modes: [rich_text]
+              - { label: "Site de l'association", name: site, widget: string, required: false }
+              - { label: "Lien pour donner directement", name: don_url, widget: string, required: false, hint: "Si rempli, un bouton « Faire un don directement » apparaît." }
+
+  # --------------------------------------------------------------------------
+  - name: etapes
+    label: "Étapes du voyage"
+    icon: route
+    files:
+      - name: etapes
+        label: "Étapes"
+        file: content/etapes.json
+        fields:
+          - label: "Étapes"
+            name: etapes
+            widget: list
+            label_singular: "étape"
+            summary: "{{fields.nom}} — {{fields.periode}}"
+            hint: "Cochez « Étape passée » quand vous avez quitté l'étape : la frise avance toute seule."
+            fields:
+              - { label: "Nom", name: nom, widget: string }
+              - { label: "Détail", name: detail, widget: string, required: false }
+              - { label: "Période", name: periode, widget: string, hint: "Date vague. Exemple : Mi-avril" }
+              - { label: "Kilomètres depuis Grasse (cumulés)", name: km, widget: string, required: false, hint: "Exemple : 1 880" }
+              - { label: "C'est une association", name: association, widget: boolean, default: false }
+              - { label: "Étape passée", name: fait, widget: boolean, default: false }
+
+  # --------------------------------------------------------------------------
+  - name: cagnotte
+    label: "Cagnotte"
+    icon: volunteer_activism
+    files:
+      - name: cagnotte
+        label: "Cagnotte"
+        file: content/cagnotte.json
+        fields:
+          - label: "Texte de présentation"
+            name: texte
+            widget: markdown
+            buttons: [bold, italic, link, bulleted-list]
+            editor_components: []
+            modes: [rich_text]
+          - { label: "Plateforme", name: plateforme, widget: string, required: false, hint: "Exemple : HelloAsso" }
+          - { label: "Lien de la cagnotte", name: url, widget: string, required: false, hint: "Si rempli, le bouton « Faire un don » apparaît. Tant que c'est vide, la page affiche « La cagnotte ouvre bientôt »." }
+          - { label: "Formulaire intégré (adresse du widget)", name: widget, widget: string, required: false, hint: "Facultatif : l'adresse « iframe » fournie par la plateforme, pour afficher le formulaire dans la page." }
+          - { label: "Objectif (en euros)", name: objectif, widget: string, required: false, hint: "Un nombre, sans le signe €. Exemple : 3000" }
+          - { label: "Déjà collecté (en euros)", name: collecte, widget: string, required: false, hint: "Un nombre. La barre de progression n'apparaît que si objectif ET collecté sont remplis." }
+
+  # --------------------------------------------------------------------------
+  - name: reglages
+    label: "Réglages (liens, chiffres, bandeau)"
+    icon: settings
+    files:
+      - name: reglages
+        label: "Réglages"
+        file: content/reglages.json
+        fields:
+          - { label: "Bandeau d'annonce", name: annonce, widget: string, required: false, hint: "Une phrase affichée tout en haut de chaque page (exemple : « Départ dans 10 jours ! »). Vide = pas de bandeau." }
+          - { label: "Date de départ", name: depart, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true, hint: "Sert au compte à rebours et au numéro du jour de chaque entrée du carnet." }
+          - { label: "Départ (en texte)", name: depart_texte, widget: string, hint: "Exemple : début mars 2027" }
+          - { label: "Période (en texte)", name: periode_texte, widget: string, hint: "Exemple : de mars à août 2027" }
+          - { label: "Kilomètres prévus", name: chiffres_km, widget: string }
+          - { label: "Pays prévus", name: chiffres_pays, widget: string }
+          - { label: "Nombre d'associations", name: chiffres_associations, widget: string }
+          - { label: "Nombre d'étudiants", name: chiffres_etudiants, widget: string }
+          - { label: "Durée en mois", name: chiffres_mois, widget: string }
+          - { label: "Kilomètres déjà parcourus", name: reel_km, widget: string, required: false, hint: "À mettre à jour pendant le voyage. Vide = le site affiche les kilomètres prévus." }
+          - { label: "Pays déjà traversés", name: reel_pays, widget: string, required: false, hint: "Vide = le site affiche les pays prévus." }
+          - { label: "Adresse e-mail", name: email, widget: string }
+          - { label: "Instagram (adresse complète)", name: instagram, widget: string, required: false, hint: "Exemple : https://www.instagram.com/triade.europe" }
+          - { label: "TikTok (adresse complète)", name: tiktok, widget: string, required: false, hint: "Exemple : https://www.tiktok.com/@nom-du-compte. Vide = l'icône TikTok n'apparaît pas." }
+          - { label: "YouTube (adresse complète)", name: youtube, widget: string, required: false }
+          - { label: "Polarsteps : lien du voyage", name: polarsteps_url, widget: string, required: false, hint: "Vide = « Le suivi en direct ouvre au départ »." }
+          - { label: "Polarsteps : adresse intégrée (iframe)", name: polarsteps_embed, widget: string, required: false, hint: "Facultatif. Si rempli, la carte Polarsteps s'affiche dans la page." }
+
+  # --------------------------------------------------------------------------
+  - name: equipe
+    label: "Équipe"
+    icon: groups
+    files:
+      - name: equipe
+        label: "L'équipe"
+        file: content/equipe.json
+        fields:
+          - { label: "Texte de présentation", name: intro, widget: text }
+          - label: "Membres"
+            name: membres
+            widget: list
+            label_singular: "membre"
+            summary: "{{fields.prenom}} {{fields.nom}}"
+            fields:
+              - { label: "Prénom", name: prenom, widget: string }
+              - { label: "Nom", name: nom, widget: string }
+              - { label: "Photo", name: photo, widget: image, required: false }
+              - { label: "Rôle", name: role, widget: string, required: false }
+              - { label: "Petite présentation", name: bio, widget: text, required: false }
+
+  # --------------------------------------------------------------------------
+  - name: soutiens
+    label: "Ils nous aident (soutiens)"
+    icon: handshake
+    files:
+      - name: soutiens
+        label: "Soutiens"
+        file: content/soutiens.json
+        fields:
+          - label: "Soutiens"
+            name: soutiens
+            widget: list
+            label_singular: "soutien"
+            summary: "{{fields.nom}}"
+            hint: "À remplir seulement après accord écrit de la personne ou de la structure. Tant que la liste est vide, l'entrée « Ils nous aident » n'apparaît pas dans le menu."
+            fields:
+              - { label: "Nom", name: nom, widget: string }
+              - { label: "Ville", name: ville, widget: string, required: false }
+              - { label: "Logo", name: logo, widget: image, required: false }
+              - { label: "Une phrase", name: phrase, widget: string, required: false, hint: "Ce que cette personne ou cette structure fait pour nous." }
+              - label: "Petite histoire"
+                name: histoire
+                widget: markdown
+                required: false
+                buttons: [bold, italic, link]
+                editor_components: []
+                modes: [rich_text]
+                hint: "Comment vous vous êtes rencontrés, ce qu'elle a changé pour vous. S'affiche dans « Leur histoire avec TRIADE »."
+              - { label: "Site", name: url, widget: string, required: false }
+
+  # --------------------------------------------------------------------------
+  - name: presse
+    label: "Presse (articles parus)"
+    icon: newspaper
+    files:
+      - name: presse
+        label: "Revue de presse"
+        file: content/presse.json
+        fields:
+          - label: "Articles"
+            name: articles
+            widget: list
+            label_singular: "article"
+            add_to_top: true
+            summary: "{{fields.media}} — {{fields.titre}}"
+            hint: "Dès qu'un article est ajouté, l'entrée « Presse » apparaît dans le menu du site."
+            fields:
+              - { label: "Média", name: media, widget: string, hint: "Exemple : Midi Libre" }
+              - { label: "Titre de l'article", name: titre, widget: string }
+              - { label: "Date", name: date, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true }
+              - { label: "Lien vers l'article", name: url, widget: string, required: false }

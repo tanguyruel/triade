@@ -1,0 +1,21 @@
+{
+  "etapes": [
+    { "nom": "Grasse", "detail": "France · départ", "periode": "Début mars", "km": "0", "association": false, "fait": false },
+    { "nom": "Rewilding Apennines", "detail": "Région de Florence, Italie", "periode": "Début mars", "km": "510", "association": true, "fait": false },
+    { "nom": "Ancône", "detail": "Puis ferry vers Zadar, Croatie", "periode": "Mi-mars", "km": "800", "association": false, "fait": false },
+    { "nom": "PPNEA", "detail": "Lynx des Balkans · Albanie", "periode": "Fin mars", "km": "1 110", "association": true, "fait": false },
+    { "nom": "Tirana", "detail": "Albanie", "periode": "Fin mars", "km": "1 460", "association": false, "fait": false },
+    { "nom": "ARCTUROS", "detail": "Région de Florina, Grèce", "periode": "Début avril", "km": "1 880", "association": true, "fait": false },
+    { "nom": "Sofia", "detail": "Bulgarie", "periode": "Mi-avril", "km": "2 320", "association": false, "fait": false },
+    { "nom": "Belgrade", "detail": "Serbie", "periode": "Fin avril", "km": "2 870", "association": false, "fait": false },
+    { "nom": "EuroNatur", "detail": "Région de Szeged, Hongrie", "periode": "Début mai", "km": "3 220", "association": true, "fait": false },
+    { "nom": "Budapest", "detail": "Hongrie", "periode": "Mi-mai", "km": "3 840", "association": false, "fait": false },
+    { "nom": "Vienne", "detail": "Autriche", "periode": "Fin mai", "km": "4 220", "association": false, "fait": false },
+    { "nom": "Prague", "detail": "Tchéquie", "periode": "Début juin", "km": "4 560", "association": false, "fait": false },
+    { "nom": "Berlin", "detail": "Allemagne", "periode": "Mi-juin", "km": "5 250", "association": false, "fait": false },
+    { "nom": "NABU · Michael-Otto-Institut", "detail": "Bergenhusen, Allemagne", "periode": "Du 20 juin au 5 juillet environ", "km": "5 620", "association": true, "fait": false },
+    { "nom": "Amsterdam", "detail": "Pays-Bas", "periode": "Mi-juillet", "km": "6 160", "association": false, "fait": false },
+    { "nom": "Bruxelles", "detail": "Belgique", "periode": "Mi-juillet", "km": "6 350", "association": false, "fait": false },
+    { "nom": "Grasse", "detail": "France · arrivée", "periode": "Début août", "km": "7 520", "association": false, "fait": false }
+  ]
+}

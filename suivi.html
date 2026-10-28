@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Suivi en direct — TRIADE</title>
+<meta name="description" content="L’itinéraire de TRIADE, de Grasse à la mer du Nord et retour. Suivez notre position en direct.">
+<meta name="theme-color" content="#F7F4EB">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TRIADE">
+<meta property="og:title" content="Suivi en direct — TRIADE">
+<meta property="og:description" content="Suivez notre position en direct.">
+<meta property="og:image" content="https://tanguyruel.github.io/triade/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css">
+<script src="assets/js/site.js" defer></script>
+</head>
+<body data-page="suivi">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<noscript><p class="annonce">Ce site a besoin de JavaScript pour afficher son contenu. En attendant, retrouvez-nous sur Instagram&nbsp;: @triade.europe</p></noscript>
+<div id="site-header"></div>
+
+<main id="contenu" tabindex="-1">
+  <section class="section section--tight">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Suivi en direct</p>
+        <h1 class="h1" style="font-size:clamp(2.2rem,5vw,3.6rem)">Une boucle de <em><span data-bind="chiffres_km"></span> km</em> à travers l’Europe</h1>
+        <p class="lede"><span data-bind="periode_texte"></span>. Départ et arrivée à Grasse, cinq associations sur la route.</p>
+      </div>
+      <div class="map"><img src="assets/img/carte-itineraire.webp" alt="Carte de l’itinéraire de TRIADE à travers l’Europe" width="1800" height="1688"></div>
+      <p class="map-caption">En orange&nbsp;: l’itinéraire à vélo. En pointillé&nbsp;: le ferry d’Ancône à Zadar. Points foncés&nbsp;: les associations.</p>
+    </div>
+  </section>
+
+  <section class="section section--white">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow">En direct</p>
+        <h2 class="h2">Où sommes-nous <em>maintenant</em>&nbsp;?</h2>
+        <div class="next" id="position" style="margin-top:22px"></div>
+      </div>
+      <div id="polarsteps"></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="head">
+        <p class="eyebrow">Les étapes</p>
+        <h2 class="h2">Étape après <em>étape</em></h2>
+        <p class="lede">Les cercles verts sont les associations. Les kilomètres sont cumulés depuis Grasse.</p>
+      </div>
+      <ol class="steps" id="etapes" style="max-width:760px"></ol>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+</body>
+</html>

@@ -1,0 +1,8 @@
+{
+  "intro": "Trois amis, étudiants ingénieurs agronomes à l’Institut Agro Montpellier. Nous partons à vélo, en autonomie, à la rencontre de celles et ceux qui protègent la biodiversité européenne.",
+  "membres": [
+    { "prenom": "Titouan", "nom": "Havet", "photo": "assets/img/equipe-titouan.webp", "role": "", "bio": "" },
+    { "prenom": "Tanguy", "nom": "Ruel", "photo": "assets/img/equipe-tanguy.webp", "role": "", "bio": "" },
+    { "prenom": "Téo", "nom": "Moghabghab", "photo": "assets/img/equipe-teo.webp", "role": "", "bio": "" }
+  ]
+}

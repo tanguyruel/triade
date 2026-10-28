@@ -1,0 +1,7 @@
+Polices hébergées sur ce site (pas d'appel à Google Fonts) :
+
+- Jost — © The Jost Project Authors (Owen Earl), SIL Open Font License 1.1
+- Bodoni Moda — © The Bodoni Moda Project Authors (Owen Earl), SIL Open Font License 1.1
+
+Fichiers WOFF2 (sous-ensemble latin) obtenus via Fontsource (@fontsource-variable/jost, @fontsource-variable/bodoni-moda).
+Texte de la licence : https://openfontlicense.org
