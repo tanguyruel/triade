@@ -331,7 +331,6 @@
     const jours = list(carnetData && carnetData.jours).sort(byDateDesc);
     const soutiens = list(soutiensData && soutiensData.soutiens);
 
-    hero(r);
     const diff = Math.round((todayUTC() - dayOf(r.depart)) / dayMs);
     const chip = $('#compte-a-rebours');
     if (chip) {
@@ -581,20 +580,6 @@
   };
 
   pages.mentions = async () => {};
-
-  // Fond photo changeant du haut de l'accueil : actif dès qu'il y a des photos dans Réglages > « Photos du haut de l'accueil »
-  function hero(r) {
-    const el = $('#hero');
-    const photos = list(r.hero_photos).map(toPath).filter(Boolean);
-    if (!el || !photos.length) return;
-    const imgs = photos.map((p, i) => h('img', { src: asset(p), alt: '', class: i ? '' : 'on', loading: i ? 'lazy' : 'eager', decoding: 'async' }));
-    $('.hero-bg', el).replaceChildren(...imgs);
-    el.classList.add('has-photos');
-    $('.hero-logo', el).src = 'assets/img/logo-creme.png';
-    if (imgs.length < 2 || matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-    let i = 0;
-    setInterval(() => { imgs[i].classList.remove('on'); i = (i + 1) % imgs.length; imgs[i].classList.add('on'); }, 6500);
-  }
 
   /* ---------- Démarrage ----------------------------------------------- */
   async function start() {
