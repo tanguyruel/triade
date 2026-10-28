@@ -10,7 +10,8 @@
       "logo": "assets/img/asso-rewilding-apennines.webp",
       "description": "Une association qui œuvre au retour d’une nature sauvage dans les Apennins centraux, où vit l’ours brun marsicain, l’un des ours les plus menacés d’Europe.",
       "site": "https://rewilding-apennines.com",
-      "don_url": ""
+      "don_url": "",
+      "dessin": "ours"
     },
     {
       "nom": "PPNEA",
@@ -22,7 +23,8 @@
       "logo": "assets/img/asso-ppnea.webp",
       "description": "Protection and Preservation of Natural Environment in Albania : une association albanaise de protection de la nature, engagée notamment pour le lynx des Balkans, un des félins les plus rares d’Europe.",
       "site": "https://ppnea.org",
-      "don_url": ""
+      "don_url": "",
+      "dessin": "lynx"
     },
     {
       "nom": "ARCTUROS",
@@ -34,7 +36,8 @@
       "logo": "assets/img/asso-arcturos.webp",
       "description": "Une association grecque qui protège l’ours brun et le loup, et accueille des ours secourus dans son refuge de Nymfaio.",
       "site": "https://www.arcturos.gr",
-      "don_url": ""
+      "don_url": "",
+      "dessin": "loup"
     },
     {
       "nom": "EuroNatur",
@@ -46,7 +49,8 @@
       "logo": "assets/img/asso-euronatur.webp",
       "description": "Une fondation européenne de protection de la nature, qui travaille à faire de l’ancien rideau de fer, de la mer de Barents à la mer Noire, un corridor de nature : la Ceinture verte européenne.",
       "site": "https://www.euronatur.org",
-      "don_url": ""
+      "don_url": "",
+      "dessin": ""
     },
     {
       "nom": "NABU",
@@ -58,7 +62,8 @@
       "logo": "assets/img/asso-nabu.webp",
       "description": "Le NABU est la plus grande association allemande de protection de la nature. Son Michael-Otto-Institut, à Bergenhusen, étudie notamment les cigognes blanches.",
       "site": "https://www.nabu.de",
-      "don_url": ""
+      "don_url": "",
+      "dessin": "cigogne"
     }
   ]
 }
