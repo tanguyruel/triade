@@ -374,11 +374,9 @@
     }
 
     // Aperçu des associations
-    $('#assos-apercu').replaceChildren(...assos.map((a, n) => h('a', { class: 'card assoc-mini fiche', href: `associations.html#${slug(a.nom)}` },
-      h('div', { class: 'planche' }, h('span', { class: 'planche-n' }, `Planche N° ${String(n + 1).padStart(2, '0')}`),
-        a.dessin ? h('img', { src: `assets/img/animaux/${a.dessin}.svg`, alt: '', loading: 'lazy' }) : null),
-      h('div', { class: 'card-body' }, h('p', { class: 'espece' }, a.espece), h('h3', {}, a.nom), h('p', { class: 'meta' }, `${a.pays} · ${a.periode}`),
-        a.logo ? h('img', { class: 'mini-logo', src: asset(a.logo), alt: '', loading: 'lazy' }) : null))));
+    $('#assos-apercu').replaceChildren(...assos.map((a, n) => h('a', { class: 'card assoc-mini', href: `associations.html#${slug(a.nom)}` },
+      h('div', { class: 'logo-tile' }, a.logo ? h('img', { src: asset(a.logo), alt: a.nom, loading: 'lazy' }) : h('b', {}, a.nom)),
+      h('div', { class: 'card-body' }, spec(n + 1, a.espece), h('h3', {}, a.nom), h('p', { class: 'meta' }, `${a.pays} · ${a.periode}`)))));
 
     // Soutiens (section masquée tant qu'il n'y en a pas)
     const zone = $('#soutiens');
@@ -443,7 +441,6 @@
       const don = x.don_url && safeUrl(x.don_url);
       return h('article', { class: 'asso', id: slug(x.nom) },
         h('div', { class: 'asso-side' },
-          x.dessin ? h('img', { class: 'animal', src: `assets/img/animaux/${x.dessin}.svg`, alt: '', loading: 'lazy' }) : null,
           x.logo ? h('img', { src: asset(x.logo), alt: x.nom, loading: 'lazy' }) : null,
           h('div', {}, statut(x.statut || 'Contact en cours'), h('p', { class: 'small muted', style: 'margin:10px 0 0' }, x.periode))),
         h('div', { class: 'asso-main' },
@@ -624,7 +621,6 @@
     const run = pages[document.body.dataset.page];
     if (run) await run(r);
     reveal();
-    decor();
     document.documentElement.classList.add('ready');
   }
   start();

@@ -137,7 +137,6 @@ collections:
                 name: statut
                 widget: select
                 options: ["Contact en cours", "Rencontre confirmée", "Rencontre réalisée"]
-              - { label: "Dessin de l'animal", name: dessin, widget: select, options: ["ours", "loup", "lynx", "cigogne"], required: false, hint: "Dessin affiché sur la fiche. Vide = pas de dessin." }
               - { label: "Logo", name: logo, widget: image, required: false }
               - label: "Présentation"
                 name: description
