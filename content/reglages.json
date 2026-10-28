@@ -15,5 +15,67 @@
   "tiktok": "",
   "youtube": "",
   "polarsteps_url": "",
-  "polarsteps_embed": ""
+  "polarsteps_embed": "",
+  "accueil_photos": [
+    {
+      "image": "assets/img/paysages/collines.webp",
+      "legende": "Collines et prairies · Paysage d’inspiration",
+      "credit": "Unsplash · SO3JtE3gZo",
+      "source": "https://unsplash.com/photos/SO3JtE3gZo"
+    },
+    {
+      "image": "assets/img/paysages/prairie-montagne.webp",
+      "legende": "Prairies de montagne · Paysage d’inspiration",
+      "credit": "Unsplash · h5ZPU1hU5CM",
+      "source": "https://unsplash.com/photos/h5ZPU1hU5CM"
+    },
+    {
+      "image": "assets/img/paysages/vallee.webp",
+      "legende": "Une vallée entre les reliefs · Paysage d’inspiration",
+      "credit": "Unsplash · N-aTikX-b00",
+      "source": "https://unsplash.com/photos/N-aTikX-b00"
+    },
+    {
+      "image": "assets/img/paysages/foret.webp",
+      "legende": "Sous la canopée · Paysage d’inspiration",
+      "credit": "Unsplash · 2uTjeMfeVEU",
+      "source": "https://unsplash.com/photos/2uTjeMfeVEU"
+    },
+    {
+      "image": "assets/img/paysages/riviere-foret.webp",
+      "legende": "Rivière et forêt · Paysage d’inspiration",
+      "credit": "Unsplash · _WiFMBRT7Aw",
+      "source": "https://unsplash.com/photos/_WiFMBRT7Aw"
+    },
+    {
+      "image": "assets/img/paysages/riviere.webp",
+      "legende": "Au fil de l’eau · Paysage d’inspiration",
+      "credit": "Unsplash · jlVEj8IDPQc",
+      "source": "https://unsplash.com/photos/jlVEj8IDPQc"
+    },
+    {
+      "image": "assets/img/paysages/littoral.webp",
+      "legende": "Horizons marins · Paysage d’inspiration",
+      "credit": "Unsplash · OD9EOzfSOh0",
+      "source": "https://unsplash.com/photos/OD9EOzfSOh0"
+    },
+    {
+      "image": "assets/img/paysages/sommets.webp",
+      "legende": "Les hauts reliefs · Paysage d’inspiration",
+      "credit": "Unsplash · 5ditmO9_ae0",
+      "source": "https://unsplash.com/photos/5ditmO9_ae0"
+    },
+    {
+      "image": "assets/img/paysages/montagnes.webp",
+      "legende": "Montagnes et nuages · Paysage d’inspiration",
+      "credit": "Unsplash · vddccTqwal8",
+      "source": "https://unsplash.com/photos/vddccTqwal8"
+    },
+    {
+      "image": "assets/img/paysages/cascades.webp",
+      "legende": "Cascades et eaux claires · Paysage d’inspiration",
+      "credit": "Unsplash · 88fE8S1JYKw",
+      "source": "https://unsplash.com/photos/88fE8S1JYKw"
+    }
+  ]
 }

@@ -292,6 +292,79 @@
   const spec = (n, text) => h('div', { class: 'spec' }, h('span', {}, `N° ${String(n).padStart(2, '0')}`), text);
   const pill = (text) => h('span', { class: 'pill' }, text);
 
+  /* ---------- Accueil photographique, contrôlable au clavier ---------- */
+  function landscapeHero(r) {
+    const stage = $('#hero-slides');
+    if (!stage) return;
+    const caption = $('#hero-caption');
+    const controls = $('#hero-controls');
+    const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+    const records = [];
+    let current = 0, timer, paused = reduced.matches;
+    const photos = list(r.accueil_photos).filter((p) => p && typeof p.image === 'string' && p.image.trim());
+    const renderCaption = (p) => caption.replaceChildren(
+      h('span', {}, p.legende || 'Sur la route avec TRIADE'),
+      p.credit ? h('span', { class: 'hero-credit' }, ' · ',
+        p.source && safeUrl(p.source) ? link(safeUrl(p.source), {}, p.credit) : p.credit) : null);
+    const select = (n) => {
+      current = n;
+      records.forEach((rec, i) => {
+        rec.img.classList.toggle('is-active', i === n);
+        if (rec.button) rec.button.setAttribute('aria-pressed', String(i === n));
+      });
+      renderCaption(records[n].photo);
+    };
+    const schedule = () => {
+      clearInterval(timer);
+      if (!paused && !document.hidden && records.length > 1) timer = setInterval(() => select((current + 1) % records.length), 7000);
+    };
+    const pause = h('button', { type: 'button', class: 'hero-pause', 'aria-label': 'Mettre le diaporama en pause', 'aria-pressed': String(paused) });
+    const pauseLabel = () => {
+      pause.textContent = paused ? 'Reprendre' : 'Pause';
+      pause.setAttribute('aria-label', paused ? 'Reprendre le diaporama' : 'Mettre le diaporama en pause');
+      pause.setAttribute('aria-pressed', String(paused));
+    };
+    pause.addEventListener('click', () => { paused = !paused; pauseLabel(); schedule(); });
+    // Chaque image rejoint le diaporama seulement après son chargement réussi.
+    // Une photo distante indisponible ne remplace jamais la photo de secours.
+    let initialized = false;
+    photos.forEach((photo) => {
+      const img = new Image();
+      img.className = 'hero-slide'; img.alt = ''; img.decoding = 'async';
+      img.onload = () => {
+        if (!initialized) { stage.replaceChildren(); initialized = true; }
+        const n = records.length;
+        const button = h('button', { type: 'button', class: 'hero-dot', 'aria-label': `Afficher la photo : ${photo.legende || n + 1}`, 'aria-pressed': String(n === 0) });
+        button.addEventListener('click', () => { select(n); schedule(); });
+        records.push({ img, photo, button });
+        stage.append(img);
+        controls.replaceChildren(...records.map((rec) => rec.button), pause);
+        controls.hidden = records.length < 2;
+        if (n === 0) select(0);
+        pauseLabel(); schedule();
+      };
+      img.src = asset(photo.image);
+    });
+    document.addEventListener('visibilitychange', schedule);
+    reduced.addEventListener('change', (e) => { if (e.matches) { paused = true; pauseLabel(); schedule(); } });
+  }
+
+  /* Les planches restent dans les seules marges beiges, jamais près des associations. */
+  function fieldNotes() {
+    const animal = (kind, name, latin, side, position) => h('figure', { class: `field-note field-note--${side}`, style: `--note-top:${position}`, 'aria-hidden': 'true' },
+      h('div', { class: `naturalist-study naturalist-study--${kind}` }, h('img', { src: `assets/img/crayon-${kind}.png`, alt: '', width: 1024, height: 1024, loading: 'lazy', decoding: 'async' })),
+      h('figcaption', {}, h('span', {}, name), h('i', {}, latin)));
+    const project = $('[data-faune="projet"]');
+    if (project) project.append(
+      animal('ours', 'Ours brun', 'Ursus arctos', 'left', '7%'),
+      animal('loup', 'Loup gris', 'Canis lupus', 'right', '36%'),
+      animal('phoque', 'Phoque moine', 'Monachus monachus', 'left', '65%'));
+    const journal = $('[data-faune="journal"]');
+    if (journal) journal.append(
+      animal('lynx', 'Lynx des Balkans', 'Lynx lynx balcanicus', 'left', '8%'),
+      animal('cigogne', 'Cigogne blanche', 'Ciconia ciconia', 'right', '12%'));
+  }
+
   /* ---------- Journal : cartes et article ----------------------------- */
   const entryTitle = (e) => e.titre || e.lieu || 'Nouvelles du voyage';
   const entryId = (e) => slug(`${String(e.date).slice(0, 10)}-${entryTitle(e)}`);
@@ -373,9 +446,11 @@
     }
 
     // Aperçu des associations
-    $('#assos-apercu').replaceChildren(...assos.map((a, n) => h('a', { class: 'card assoc-mini', href: `associations.html#${slug(a.nom)}` },
-      h('div', { class: 'logo-tile' }, a.logo ? h('img', { src: asset(a.logo), alt: a.nom, loading: 'lazy' }) : h('b', {}, a.nom)),
-      h('div', { class: 'card-body' }, spec(n + 1, a.espece), h('h3', {}, a.nom), h('p', { class: 'meta' }, `${a.pays} · ${a.periode}`)))));
+    $('#assos-apercu').replaceChildren(...assos.map((a, n) => h('article', { class: 'card assoc-mini' },
+      h('a', { class: 'logo-tile', href: `associations.html#${slug(a.nom)}`, 'aria-label': `Découvrir ${a.nom}` }, a.logo ? h('img', { src: asset(a.logo), alt: a.nom, loading: 'lazy' }) : h('b', {}, a.nom)),
+      h('div', { class: 'card-body' }, h('p', { class: 'meta' }, `${a.pays} · ${a.periode}`), h('h3', {}, a.nom), h('p', { class: 'small muted' }, a.espece),
+        h('div', { class: 'assoc-links' }, h('a', { href: `associations.html#${slug(a.nom)}` }, 'La rencontre →'), a.site && safeUrl(a.site) ? link(safeUrl(a.site), {}, 'Site officiel ↗') : null)))));
+
 
     // Soutiens (section masquée tant qu'il n'y en a pas)
     const zone = $('#soutiens');
@@ -443,7 +518,7 @@
           x.logo ? h('img', { src: asset(x.logo), alt: x.nom, loading: 'lazy' }) : null,
           h('div', {}, statut(x.statut || 'Contact en cours'), h('p', { class: 'small muted', style: 'margin:10px 0 0' }, x.periode))),
         h('div', { class: 'asso-main' },
-          spec(n + 1, x.espece),
+          h('p', { class: 'eyebrow' }, x.espece),
           h('h2', {}, x.nom),
           h('p', { class: 'meta' }, [x.pays, x.zone].filter(Boolean).join(' · ')),
           markdown(x.description),
@@ -593,6 +668,8 @@
       return;
     }
     await buildChrome(r);
+    landscapeHero(r);
+    fieldNotes();
     bind(r);
     const run = pages[document.body.dataset.page];
     if (run) await run(r);

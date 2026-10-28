@@ -85,3 +85,30 @@ La carte s'affiche sur l'accueil (« À la une » si elle a une photo) et dans l
 - Aperçu local : `python3 -m http.server 8000` dans ce dossier, puis `http://localhost:8000` (ouvrir `index.html` en double-cliquant ne marche pas : le navigateur bloque la lecture des fichiers JSON).
 - Couleurs et polices : variables au début de `assets/css/style.css`.
 - Nouvelle page : copier une page existante, changer `data-page`, ajouter une fonction dans `pages` de `assets/js/site.js`, et l'entrée dans `NAV`.
+
+
+## Changer les photos du haut de l’accueil
+
+Dans **Réglages → Photos du haut de l’accueil**, ajoutez, remplacez ou retirez des
+photos. Pour chacune, indiquez une légende, le crédit et, si utile, un lien source.
+Pendant le voyage, remplacez les vues d’inspiration par vos photos de vélo,
+d’animaux et de rencontres avec les associations (avec l’accord des personnes
+photographiées). N’indiquez un lieu que si vous le connaissez réellement.
+
+Le diaporama change de photo toutes les 7 secondes. Les points permettent de
+choisir une image ; le bouton Pause arrête le défilement. Le défilement automatique
+est arrêté pour les visiteurs qui demandent moins d’animations. Une image qui ne
+charge pas est ignorée. Si aucune image de la liste ne charge ou si la liste est
+vide, la photo locale du projet reste affichée.
+
+Les dix paysages d’inspiration sont des photos Internet issues d’Unsplash,
+via la collection Bitscoper Nature. Ils sont hébergés avec le site dans
+`assets/img/paysages/`, avec leurs sources dans `credits-photos.html` et dans les
+réglages. Les lieux exacts ne sont pas tous identifiés : ce ne sont ni des photos
+du voyage ni des étapes certifiées. Chaque image a été redimensionnée et encodée
+en WebP pour réduire le poids du diaporama. Aucun appel à Unsplash n’est nécessaire
+pour leur affichage. La photo locale du projet reste disponible comme secours.
+
+Les cinq dessins au crayon sont décoratives et ne s’affichent que dans les marges beiges de
+l’accueil à partir de 1360 px, là où il y a assez de place. Elles restent absentes
+des cartes et de la page des associations, et sont masquées sur mobile.

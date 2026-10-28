@@ -201,6 +201,17 @@ collections:
         file: content/reglages.json
         fields:
           - { label: "Bandeau d'annonce", name: annonce, widget: string, required: false, hint: "Une phrase affichée tout en haut de chaque page (exemple : « Départ dans 10 jours ! »). Vide = pas de bandeau." }
+          - label: "Photos du haut de l’accueil"
+            name: accueil_photos
+            widget: list
+            required: false
+            summary: "{{fields.legende}}"
+            hint: "Remplacez les images d’inspiration par vos photos à vélo, d’animaux ou de rencontres. Utilisez des photos dont vous avez les droits et indiquez le lieu réel. Si la liste est vide, la photo du projet reste affichée."
+            fields:
+              - { label: "Photo", name: image, widget: image }
+              - { label: "Légende", name: legende, widget: string }
+              - { label: "Crédit photo", name: credit, widget: string, required: false }
+              - { label: "Lien de la source", name: source, widget: string, required: false }
           - { label: "Date de départ", name: depart, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true, hint: "Sert au compte à rebours et au numéro du jour de chaque entrée du carnet." }
           - { label: "Départ (en texte)", name: depart_texte, widget: string, hint: "Exemple : début mars 2027" }
           - { label: "Période (en texte)", name: periode_texte, widget: string, hint: "Exemple : de mars à août 2027" }

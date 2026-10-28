@@ -16,8 +16,8 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261028b">
-<script src="assets/js/site.js?v=20261028b" defer></script>
+<link rel="stylesheet" href="assets/css/style.css?v=20261028f">
+<script src="assets/js/site.js?v=20261028f" defer></script>
 </head>
 <body data-page="accueil">
 <a class="skip" href="#contenu">Aller au contenu</a>
@@ -26,22 +26,26 @@
 
 <main id="contenu" tabindex="-1">
 
-  <!-- ACCUEIL : grand titre -->
-  <section class="hero">
+  <!-- Les photos et leurs légendes sont modifiables dans Réglages. -->
+  <section class="hero hero--landscape" aria-label="TRIADE, une traversée pour le vivant">
+    <div class="hero-slides" id="hero-slides" aria-hidden="true">
+      <img class="hero-slide is-active" src="assets/img/route-triade.jpg" alt="" width="1440" height="1220" fetchpriority="high">
+    </div>
     <div class="wrap">
-      <div>
-        <p class="chip" hidden><i></i><span id="compte-a-rebours"></span></p>
-        <p class="eyebrow">Projet étudiant et associatif</p>
-        <h1 class="h1">À vélo pour celles et ceux qui protègent <em>le vivant</em></h1>
-        <p class="lede">Trois étudiants, trois vélos, <span data-bind="chiffres_km"></span> km à travers l’Europe, <span data-bind="periode_texte"></span>, à la rencontre d’associations de protection de la biodiversité.</p>
+      <div class="hero-copy">
+        <p class="eyebrow">Trois vélos. L’Europe. Le vivant.</p>
+        <h1 class="h1">Prendre la route.<br>Rencontrer <em>le vivant.</em></h1>
+        <p class="lede">Nous sommes Tanguy, Téo et Titouan. De mars à août 2027, nous partons à vélo à travers l’Europe pour découvrir les territoires et les personnes qui prennent soin de la nature.</p>
         <div class="row">
-          <a class="btn" data-href="instagram">Suivre l’aventure</a>
+          <a class="btn" href="#le-projet">Découvrir le projet <span aria-hidden="true">↓</span></a>
           <a class="btn btn--ghost" href="cagnotte.html">Soutenir les associations</a>
         </div>
+        <p class="hero-period">Grasse → l’Europe → Grasse <span>· Mars — août 2027</span></p>
       </div>
-      <div class="hero-art">
-        <img src="assets/img/globe.webp" alt="L’Europe dessinée en pointillé" width="820" height="820">
-      </div>
+    </div>
+    <div class="hero-bottom wrap">
+      <p id="hero-caption">Avant le départ · Une image du projet TRIADE</p>
+      <div class="hero-controls" id="hero-controls" role="group" aria-label="Choisir un paysage" hidden></div>
     </div>
   </section>
 
@@ -51,18 +55,18 @@
   </section>
 
   <!-- LE PROJET -->
-  <section class="section">
+  <section class="section field-section" id="le-projet" data-faune="projet">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Le projet</p>
-        <h2 class="h2">Une boucle européenne pour rencontrer ceux qui <em>protègent la nature</em></h2>
-        <p class="lede">Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant <span data-bind="chiffres_mois"></span> mois, nous traversons l’Europe à vélo pour rencontrer cinq associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.</p>
+        <h2 class="h2">Voyager à hauteur de vélo.<br>Apprendre <em>sur le terrain.</em></h2>
+        <p class="lede">Étudiants à l’Institut Agro Montpellier, nous avons envie de comprendre la protection de la biodiversité là où elle se joue. Notre fil conducteur : cinq associations, des rencontres de terrain et le temps du voyage à vélo pour relier les unes aux autres.</p>
         <p class="school"><a href="https://institut-agro-montpellier.fr" target="_blank" rel="noopener"><img src="assets/img/logo-institut-agro.webp" alt="L’Institut Agro Montpellier, école des trois étudiants" width="170" height="66" loading="lazy"></a></p>
       </div>
       <div class="pillars">
-        <div class="pillar"><img class="picto" src="assets/img/picto-rouler.svg" alt="" width="48" height="48"><h3>Rouler</h3><p>Trois vélos, en autonomie, sur les petites routes et les voies vertes quand c’est possible.</p></div>
-        <div class="pillar"><img class="picto" src="assets/img/picto-rencontrer.svg" alt="" width="48" height="48"><h3>Rencontrer</h3><p>Cinq associations. Sur place, nous donnons un coup de main et nous interviewons celles et ceux du terrain.</p></div>
-        <div class="pillar"><img class="picto" src="assets/img/picto-partager.svg" alt="" width="48" height="48"><h3>Partager</h3><p>Photos, vidéos et récits au fil de la route, ici, sur Instagram et sur TikTok. Et une cagnotte pour soutenir les associations.</p></div>
+        <div class="pillar"><img class="picto" src="assets/img/picto-rouler.svg" alt="" width="48" height="48"><h3>Rouler</h3><p>Avancer en autonomie, emprunter les petites routes et prendre le temps de voir les paysages changer.</p></div>
+        <div class="pillar"><img class="picto" src="assets/img/picto-rencontrer.svg" alt="" width="48" height="48"><h3>Rencontrer</h3><p>Échanger avec les équipes locales, comprendre leurs actions et, lorsque c’est possible, donner un coup de main.</p></div>
+        <div class="pillar"><img class="picto" src="assets/img/picto-partager.svg" alt="" width="48" height="48"><h3>Partager</h3><p>Rapporter des récits, des images et des interviews pour rendre visible le travail de celles et ceux qui protègent le vivant.</p></div>
       </div>
     </div>
   </section>
@@ -73,7 +77,7 @@
       <div>
         <p class="eyebrow">L’itinéraire</p>
         <h2 class="h2">De la Côte d’Azur à la <em>mer du Nord</em>, par les Balkans</h2>
-        <p class="lede" style="margin-top:18px">Des Apennins aux Balkans, du Danube à la mer du Nord&nbsp;: un seul trajet, cinq rencontres.</p>
+        <p class="lede" style="margin-top:18px">Les reliefs des Apennins, les forêts des Balkans, les rives du Danube, puis les horizons de la mer du Nord. Une boucle au départ de Grasse, avec cinq rencontres comme points de repère.</p>
         <div class="next" id="position"></div>
         <p class="more"><a class="btn btn--ghost" href="suivi.html">Voir toutes les étapes</a></p>
       </div>
@@ -82,7 +86,7 @@
   </section>
 
   <!-- DERNIÈRES NOUVELLES -->
-  <section class="section">
+  <section class="section field-section" data-faune="journal">
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Journal de bord</p>
@@ -98,8 +102,8 @@
     <div class="wrap">
       <div class="head">
         <p class="eyebrow">Les associations</p>
-        <h2 class="h2">Cinq associations, cinq espèces à <em>protéger</em></h2>
-        <p class="lede">Chacune a son terrain, son espèce, ses combats. Nous irons les voir, et nous donnerons la parole à celles et ceux qui y travaillent.</p>
+        <h2 class="h2">Cinq étapes pour celles et ceux qui <em>protègent le vivant</em></h2>
+        <p class="lede">Des grands carnivores aux oiseaux et aux corridors écologiques, leurs actions dessinent une autre carte de l’Europe. Voici les structures que nous souhaitons rencontrer ; les échanges sont en cours.</p>
       </div>
       <div class="grid grid--3" id="assos-apercu"></div>
       <p class="more"><a class="link-arrow" href="associations.html">Découvrir les associations et leurs interviews</a></p>
@@ -120,7 +124,7 @@
       <div class="head">
         <p class="eyebrow">Soutenir</p>
         <h2 class="h2">Donner un coup de pouce à celles et ceux qui protègent <em>le vivant</em></h2>
-        <p class="lede" style="margin-inline:auto">La cagnotte TRIADE soutient les associations que nous rencontrons.</p>
+        <p class="lede" style="margin-inline:auto">Nous préparons une cagnotte pour soutenir les associations de l’itinéraire. En attendant son ouverture, découvrez leurs actions et faites connaître le projet.</p>
       </div>
       <div class="row">
         <a class="btn" href="cagnotte.html">Voir la cagnotte</a>

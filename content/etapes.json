@@ -1,7 +1,7 @@
 {
   "etapes": [
     { "nom": "Grasse", "detail": "France · départ", "periode": "Début mars", "km": "0", "association": false, "fait": false },
-    { "nom": "Rewilding Apennines", "detail": "Région de Florence, Italie", "periode": "Début mars", "km": "510", "association": true, "fait": false },
+    { "nom": "Rewilding Apennines", "detail": "Apennins centraux, Italie", "periode": "Début mars", "km": "510", "association": true, "fait": false },
     { "nom": "Ancône", "detail": "Puis ferry vers Zadar, Croatie", "periode": "Mi-mars", "km": "800", "association": false, "fait": false },
     { "nom": "PPNEA", "detail": "Lynx des Balkans · Albanie", "periode": "Fin mars", "km": "1 110", "association": true, "fait": false },
     { "nom": "Tirana", "detail": "Albanie", "periode": "Fin mars", "km": "1 460", "association": false, "fait": false },
