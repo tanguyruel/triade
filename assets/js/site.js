@@ -596,15 +596,6 @@
     setInterval(() => { imgs[i].classList.remove('on'); i = (i + 1) % imgs.length; imgs[i].classList.add('on'); }, 6500);
   }
 
-  // Dessins d'animaux dans les marges blanches (grands écrans seulement) : ours, loup, lynx, cigogne
-  function decor() {
-    const names = ['ours', 'cigogne', 'lynx', 'loup'];
-    const H = document.body.scrollHeight;
-    for (let i = 0, y = 380; y < H - 500; i++, y += 820) {
-      document.body.append(h('img', { class: `deco ${i % 2 ? 'deco--r' : 'deco--l'}`, src: `assets/img/animaux/${names[i % 4]}.svg`, alt: '', 'aria-hidden': 'true', style: `top:${y}px`, loading: 'lazy' }));
-    }
-  }
-
   /* ---------- Démarrage ----------------------------------------------- */
   async function start() {
     const r = await getJSON('reglages');
