@@ -11,7 +11,7 @@ L'espace équipe se trouve à l'adresse du site suivie de `/admin/`
 ## 1. La première fois (10 minutes, une seule fois)
 
 1. **Crée un compte GitHub gratuit** sur [github.com](https://github.com) (c'est là que vit le site).
-2. **Donne ton nom d'utilisateur GitHub à Titouan.** Il t'ajoute à l'équipe du site (Settings → Collaborators) et tu reçois un e-mail d'invitation : clique sur « Accept invitation ».
+2. **Donne ton nom d'utilisateur GitHub à Tanguy.** Il t'ajoute à l'équipe du site (dépôt `tanguyruel/triade` → Settings → Collaborators) et tu reçois un e-mail d'invitation : clique sur « Accept invitation ».
 3. **Ouvre l'espace équipe** (adresse ci-dessus) et clique sur **« Se connecter avec un jeton d'accès »**.
    (Ne clique pas sur « Se connecter avec GitHub » : ce bouton ne marche pas encore.)
 4. Une fenêtre t'explique comment créer ton jeton : clique sur le lien, GitHub s'ouvre avec les bonnes cases déjà cochées. Clique sur **« Generate token »**, **copie** le jeton, reviens sur l'espace équipe et **colle-le**.
@@ -70,12 +70,12 @@ La carte s'affiche sur l'accueil (« À la une » si elle a une photo) et dans l
 
 - **Je ne vois pas ma modification** : attends 2 minutes, puis recharge en forçant (`Ctrl + Maj + R`, ou `Cmd + Maj + R` sur Mac). Sur téléphone, ferme et rouvre l'onglet.
 - **Une case me demande quelque chose que je n'ai pas** : seules certaines cases sont obligatoires (la date, le nom…). Les autres peuvent rester vides.
-- **J'ai fait une erreur** : corrige-la dans l'espace équipe et enregistre à nouveau. Tout est gardé dans l'historique GitHub (onglet « Commits » du dépôt), donc rien n'est perdu : Titouan peut revenir en arrière.
-- **L'espace équipe affiche une erreur** : préviens Titouan.
+- **J'ai fait une erreur** : corrige-la dans l'espace équipe et enregistre à nouveau. Tout est gardé dans l'historique GitHub (onglet « Commits » du dépôt), donc rien n'est perdu : Tanguy peut revenir en arrière.
+- **L'espace équipe affiche une erreur** : préviens Tanguy.
 
 ---
 
-## 6. Pour Titouan (technique)
+## 6. Pour la personne technique
 
 - Site 100 % statique (HTML, CSS, JavaScript sans bibliothèque), publié par GitHub Pages depuis la branche `main`.
 - Le texte et les photos sont dans `content/*.json` et `photos/`. Les pages (`*.html`) et `assets/js/site.js` ne servent qu'à les afficher.
