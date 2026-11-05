@@ -4,35 +4,42 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Les associations — TRIADE</title>
-<meta name="description" content="Rewilding Apennines, PPNEA, ARCTUROS, EuroNatur, NABU : les cinq associations de protection de la nature que TRIADE rencontre à vélo, avec leurs interviews.">
+<meta name="description" content="Rewilding Apennines, PPNEA, ARCTUROS &amp; Callisto, EuroNatur, NABU : les six associations de protection de la nature que TRIADE rencontre à vélo, avec leurs témoignages.">
 <meta name="theme-color" content="#F7F4EB">
 <link rel="icon" href="assets/img/favicon.png">
 <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="TRIADE">
 <meta property="og:title" content="Les associations — TRIADE">
-<meta property="og:description" content="Cinq associations, cinq espèces à protéger, des interviews du terrain.">
+<meta property="og:description" content="Six associations pour protéger le vivant, et leurs témoignages.">
 <meta property="og:image" content="https://tanguyruel.github.io/triade/assets/img/og-image.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261028b">
-<script src="assets/js/site.js?v=20261028b" defer></script>
+<link rel="stylesheet" href="assets/css/style.css?v=20261105g">
+<script src="assets/js/site.js?v=20261105g" defer></script>
 </head>
 <body data-page="associations">
 <a class="skip" href="#contenu">Aller au contenu</a>
 <noscript><p class="annonce">Ce site a besoin de JavaScript pour afficher son contenu. En attendant, retrouvez-nous sur Instagram&nbsp;: @triade.europe</p></noscript>
 <div id="site-header"></div>
 
-<main id="contenu" tabindex="-1">
-  <section class="section section--tight">
+<main id="contenu" tabindex="-1" class="page-dessins">
+  <!-- Bandeau de paysages du trajet (content/bandeau.json) ; les fiches commencent dès le bas du bandeau -->
+  <section class="bandeau bandeau--page" id="bandeau">
     <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Les associations</p>
-        <h1 class="h1" style="font-size:clamp(2.2rem,5vw,3.6rem)">Cinq associations, cinq espèces à <em>protéger</em></h1>
-        <p class="lede">Sur la route, nous passons quelques jours dans chaque association&nbsp;: nous donnons un coup de main, nous découvrons leur terrain et nous interviewons celles et ceux qui y travaillent.</p>
-      </div>
+      <p class="eyebrow">Les associations</p>
+      <h1 class="h1">Six associations pour <em>protéger le vivant</em></h1>
+      <p class="lede">Chaque association a son terrain, son espèce, ses combats. Nous venons les rencontrer, donner un coup de main et raconter ce qu’elles font.</p>
+      <nav class="acces" id="acces" aria-label="Aller à une association"></nav>
+    </div>
+  </section>
+
+
+  <section class="section section--tight remonte">
+    <div class="wrap">
       <div id="liste"></div>
+      <img class="illu plantes-bas" src="assets/illustrations/vegetation.webp" alt="" width="377" height="536" loading="lazy">
     </div>
   </section>
 </main>

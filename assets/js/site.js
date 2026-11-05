@@ -253,7 +253,7 @@
         h('a', { class: 'btn btn--nav', href: 'cagnotte.html', 'aria-current': page === 'cagnotte' ? 'page' : null }, 'Soutenir'), burger))));
 
     const year = new Date().getFullYear();
-    $('#site-footer').replaceWith(h('footer', { class: 'site-footer' }, h('div', { class: 'wrap' },
+    $('#site-footer').replaceWith(h('footer', { class: 'site-footer' }, illu('arbre', '', 'pied-arbre'), h('div', { class: 'wrap' },
       h('div', { class: 'cols' },
         h('div', {}, h('img', { src: 'assets/img/logo-creme.png', alt: 'TRIADE', width: 85, height: 84, onerror: (e) => e.target.remove() }),
           h('p', { class: 'small' }, 'Three Riders In Adventure Discovering Europe.'),
@@ -340,6 +340,7 @@
 
     // Chiffres clés avec leur objectif : réels s'ils sont renseignés, sinon prévus
     const faites = assos.filter((a) => a.statut === 'Rencontre réalisée').length;
+    const total = Number(r.chiffres_associations) || assos.length;
     const fig = (value, label, total, pct) => h('div', { class: 'fig' },
       h('b', {}, value, total ? h('small', {}, ` / ${total}`) : null), h('span', {}, label),
       pct !== undefined ? h('div', { class: 'meter sm', role: 'img', 'aria-label': `${Math.round(pct)} % de l’objectif` }, h('i', { style: `width:${Math.min(100, pct)}%` })) : null);
@@ -348,7 +349,7 @@
       diff < 0 ? fig(String(-diff), 'jours avant le départ') : fig(String(diff + 1), 'jours de route'),
       r.reel_km ? fig(r.reel_km, 'km parcourus', r.chiffres_km, pctOf(r.reel_km, r.chiffres_km)) : fig(r.chiffres_km, 'km prévus'),
       r.reel_pays ? fig(r.reel_pays, 'pays traversés', r.chiffres_pays, pctOf(r.reel_pays, r.chiffres_pays)) : fig(r.chiffres_pays, 'pays prévus'),
-      faites ? fig(String(faites), 'associations rencontrées', String(assos.length), (faites / assos.length) * 100) : fig(String(assos.length || r.chiffres_associations), 'associations à rencontrer'));
+      faites ? fig(String(faites), 'associations rencontrées', String(total), (faites / total) * 100) : fig(String(total), 'associations à rencontrer'));
 
     // Où sommes-nous aujourd'hui ?
     const pos = lastPosition(jours);
@@ -374,7 +375,8 @@
 
     // Aperçu des associations
     $('#assos-apercu').replaceChildren(...assos.map((a, n) => h('a', { class: 'card assoc-mini', href: `associations.html#${slug(a.nom)}` },
-      h('div', { class: 'logo-tile' }, a.logo ? h('img', { src: asset(a.logo), alt: a.nom, loading: 'lazy' }) : h('b', {}, a.nom)),
+      h('div', { class: `logo-tile${a.logo2 ? ' logo-tile--duo' : ''}` }, a.logo ? h('img', { src: asset(a.logo), alt: a.logo2 ? a.nom.split(' & ')[0] : a.nom, loading: 'lazy' }) : h('b', {}, a.nom),
+        a.logo2 ? [h('span', { class: 'logo-plus', 'aria-hidden': 'true' }, '+'), h('img', { src: asset(a.logo2), alt: a.logo2_alt || '', loading: 'lazy' })] : null),
       h('div', { class: 'card-body' }, spec(n + 1, a.espece), h('h3', {}, a.nom), h('p', { class: 'meta' }, `${a.pays} · ${a.periode}`)))));
 
     // Soutiens (section masquée tant qu'il n'y en a pas)
@@ -440,18 +442,24 @@
       const don = x.don_url && safeUrl(x.don_url);
       return h('article', { class: 'asso', id: slug(x.nom) },
         h('div', { class: 'asso-side' },
-          x.logo ? h('img', { src: asset(x.logo), alt: x.nom, loading: 'lazy' }) : null,
+          x.logo ? h('div', { class: 'asso-logos' }, h('img', { src: asset(x.logo), alt: x.logo2 ? x.nom.split(' & ')[0] : x.nom, loading: 'lazy' }),
+            x.logo2 ? [h('span', { class: 'logo-plus', 'aria-hidden': 'true' }, '+'), h('img', { src: asset(x.logo2), alt: x.logo2_alt || '', loading: 'lazy' })] : null) : null,
           h('div', {}, statut(x.statut || 'Contact en cours'), h('p', { class: 'small muted', style: 'margin:10px 0 0' }, x.periode))),
         h('div', { class: 'asso-main' },
-          spec(n + 1, x.espece),
-          h('h2', {}, x.nom),
-          h('p', { class: 'meta' }, [x.pays, x.zone].filter(Boolean).join(' · ')),
-          markdown(x.description),
-          (site || don) ? h('div', { class: 'links' }, site ? link(site, { class: 'btn btn--ghost' }, 'Site de l’association') : null, don ? link(don, { class: 'btn' }, 'Faire un don directement') : null) : null,
+          illu(x.illustration, x.illustration_alt, 'asso-art'),
+          h('div', { class: 'asso-tete' },
+            spec(n + 1, x.espece),
+            h('h2', {}, x.nom),
+            h('p', { class: 'meta' }, [x.pays, x.zone].filter(Boolean).join(' · ')),
+            markdown(x.description)),
+          (site || don) ? h('div', { class: 'links' }, site ? link(site, { class: 'btn btn--ghost' }, x.site2 ? `Site d’${x.nom.split(' & ')[0]}` : 'Site de l’association') : null,
+            x.site2 && safeUrl(x.site2) ? link(safeUrl(x.site2), { class: 'btn btn--ghost' }, `Site de ${x.nom.split(' & ')[1] || 'la 2e association'}`) : null, don ? link(don, { class: 'btn' }, 'Faire un don directement') : null) : null,
           h('div', { class: 'asso-interviews' },
-            h('h3', {}, 'Interviews du terrain'),
-            mine.length ? h('div', { class: 'grid grid--2' }, mine.map((iv) => interviewCard(iv, false))) : h('p', { class: 'muted small', style: 'margin:0' }, `Interview à venir — rendez-vous ${x.periode.charAt(0).toLowerCase() + x.periode.slice(1)}.`))));
+            h('h3', {}, 'Témoignages'),
+            mine.length ? h('div', { class: 'grid grid--2' }, mine.map((iv) => interviewCard(iv, false))) : h('p', { class: 'muted small', style: 'margin:0' }, `Témoignage à venir — rendez-vous ${x.periode.charAt(0).toLowerCase() + x.periode.slice(1)}.`))));
     }));
+    const acces = $('#acces');
+    if (acces) acces.replaceChildren(...assos.map((x) => h('a', { href: `#${slug(x.nom)}` }, x.nom)));
     scrollToHash();
   };
 
@@ -460,7 +468,7 @@
     const i = await getJSON('interviews');
     const ivs = list(i && i.interviews).sort(byDateDesc);
     const zone = $('#liste');
-    if (!ivs.length) { zone.replaceChildren(empty('Les premières rencontres arrivent', `Dans chaque association, nous interviewons celles et ceux qui font le travail de terrain. Premières interviews dès ${r.depart_texte}.`)); return; }
+    if (!ivs.length) { zone.replaceChildren(empty('Les premières rencontres arrivent', `Dans chaque association, nous recueillons les témoignages des équipes. Premières rencontres dès ${r.depart_texte}.`)); return; }
     const noms = [...new Set(ivs.map((iv) => iv.association).filter(Boolean))];
     const grid = h('div', { class: 'grid grid--2' }, ivs.map((iv) => interviewCard(iv, true)));
     const chips = ['Toutes', ...noms].map((nom, n) => h('button', { type: 'button', 'aria-pressed': String(n === 0) }, nom));
@@ -478,6 +486,12 @@
     const zone = $('#fil');
     const tete = $('#journal-tete');
     const baseTitle = document.title;
+    const psNote = $('#polarsteps-note');
+    if (psNote) {
+      const psUrl = r.polarsteps_url ? safeUrl(r.polarsteps_url) : '';
+      psNote.replaceChildren(psUrl ? link(psUrl, { class: 'btn btn--ghost' }, icon('pin'), 'Suivre notre trajet sur Polarsteps')
+        : h('p', { class: 'polarsteps-note' }, icon('pin'), h('span', {}, h('b', {}, 'Polarsteps'), ' · notre trajet en direct, bientôt ici')));
+    }
 
     const article = (e) => {
       const photos = entryPhotos(e);
@@ -582,6 +596,46 @@
   pages.mentions = async () => {};
 
   /* ---------- Démarrage ----------------------------------------------- */
+  // Dessins à l'encre et à l'aquarelle (assets/illustrations/) : dimensions réelles pour éviter les sauts de mise en page.
+  const ILLU = { 'arbre': [390, 534], 'cigogne': [322, 534], 'loup': [352, 415], 'lynx-balkans': [376, 453], 'oiseaux-allemagne': [415, 497], 'ours-marsican': [380, 463], 'phoque-moine': [417, 344], 'vegetation': [377, 536] };
+  const illu = (nom, alt, cls) => ILLU[nom] ? h('img', { class: `illu ${cls || ''}`.trim(), src: `assets/illustrations/${nom}.webp`, alt: alt || '', width: ILLU[nom][0], height: ILLU[nom][1], loading: 'lazy', decoding: 'async' }) : null;
+
+  // Bandeau : paysages qui glissent d'une photo à la suivante (content/bandeau.json, modifiable dans l'Espace équipe).
+  // Sans photo dans le fichier, la zone reste sur fond crème : aucune photo n'est inventée.
+  async function bandeau() {
+    const zone = $('#bandeau');
+    if (!zone) return;
+    const data = await getJSON('bandeau');
+    const photos = list(data && data.photos).filter((p) => p && p.image);
+    if (!photos.length) { zone.classList.add('bandeau--vide'); return; }
+    const slides = photos.map((p, n) => h('div', { class: 'bandeau-slide' }, h('img', { src: asset(p.image), alt: '', loading: n ? 'lazy' : 'eager', decoding: 'async' })));
+    const track = h('div', { class: 'bandeau-track' }, slides, slides[0].cloneNode(true));   // la copie de la 1re photo permet de boucler sans saut
+    const legende = h('p', { class: 'bandeau-legende' });
+    const boutons = photos.map((p, n) => h('button', { type: 'button', 'aria-label': `Photo ${n + 1} sur ${photos.length}${p.lieu ? ' : ' + p.lieu : ''}`, onclick: () => { aller(n); relance(); } }));
+    const points = h('div', { class: 'bandeau-points' }, boutons);
+    zone.prepend(track);
+    zone.append(h('div', { class: 'bandeau-bas' }, h('div', { class: 'wrap' }, legende, photos.length > 1 ? points : null)));
+    let i = 0, timer = null;
+    const montre = (n) => {
+      const p = photos[n];
+      legende.replaceChildren(h('b', {}, p.lieu || ''), p.etape ? ` — ${p.etape}` : '', ' · ',
+        p.lien && safeUrl(p.lien) ? h('a', { href: safeUrl(p.lien), target: '_blank', rel: 'noopener' }, p.credit || 'Photo') : (p.credit || ''));
+      boutons.forEach((b, k) => b.setAttribute('aria-current', String(k === n)));
+    };
+    const place = (n, anime) => { track.classList.toggle('glisse', !!anime); track.style.transform = `translateX(${-100 * n}%)`; };
+    const aller = (n) => { i = n; place(i, true); montre(i % photos.length); };
+    const suivante = () => {
+      i += 1; place(i, true); montre(i % photos.length);
+      if (i === photos.length) setTimeout(() => { i = 0; place(0, false); }, 1600);   // retour discret sur la vraie 1re photo
+    };
+    const relance = () => {
+      clearInterval(timer);
+      const calme = matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (photos.length > 1 && !calme) timer = setInterval(() => { if (!document.hidden) suivante(); }, Math.max(3, Number(data.intervalle) || 7) * 1000);
+    };
+    montre(0); place(0, false); relance();
+  }
+
   async function start() {
     const r = await getJSON('reglages');
     const main = $('#contenu');
@@ -594,6 +648,7 @@
     }
     await buildChrome(r);
     bind(r);
+    bandeau();
     const run = pages[document.body.dataset.page];
     if (run) await run(r);
     reveal();

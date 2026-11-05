@@ -1,0 +1,117 @@
+{
+  "intervalle": 7,
+  "photos": [
+    {
+      "image": "assets/paysages/cannes.webp",
+      "lieu": "Baie de Cannes et massif de l’Esterel",
+      "etape": "France — Côte d’Azur, premiers coups de pédale",
+      "credit": "Florian Pépellin · CC BY-SA 3.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Baie_de_Cannes_et_Esterel_(2014).JPG"
+    },
+    {
+      "image": "assets/paysages/abruzzes.webp",
+      "lieu": "Parc national des Abruzzes",
+      "etape": "Italie — pays de l’ours marsicain",
+      "credit": "Zoe Olivieri · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Abruzzo_mountains.jpg"
+    },
+    {
+      "image": "assets/paysages/zadar.webp",
+      "lieu": "Coucher de soleil à Zadar",
+      "etape": "Croatie — arrivée du ferry d’Ancône",
+      "credit": "PJL · CC BY 2.5 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Sunset_in_Zadar.jpg"
+    },
+    {
+      "image": "assets/paysages/alpes-albanaises.webp",
+      "lieu": "Alpes albanaises, Theth",
+      "etape": "Albanie — pays du lynx des Balkans",
+      "credit": "Anna Ilieva-Alikaj · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Albanian_Alps_view,_Theth.jpg"
+    },
+    {
+      "image": "assets/paysages/prespa-malko.webp",
+      "lieu": "Petit lac de Prespa",
+      "etape": "Grèce · Albanie · Macédoine du Nord",
+      "credit": "stefg74 · CC BY 2.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Malko_Prespansko_ezero_panorama.jpg"
+    },
+    {
+      "image": "assets/paysages/prespa.webp",
+      "lieu": "Lac de Prespa",
+      "etape": "Grèce · Albanie · Macédoine du Nord",
+      "credit": "Ivan.trpkov · CC BY-SA 3.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Prespa_Lake_2015.JPG"
+    },
+    {
+      "image": "assets/paysages/pinde.webp",
+      "lieu": "Monts du Pinde",
+      "etape": "Grèce — pays de l’ours et du loup",
+      "credit": "Apostoli1234 · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Rainbow_over_the_Pindus_mountains.jpg"
+    },
+    {
+      "image": "assets/paysages/sofia.webp",
+      "lieu": "Cathédrale Alexandre-Nevski, Sofia",
+      "etape": "Bulgarie — étape de mi-avril",
+      "credit": "Pudelek (Marcin Szala) · CC BY-SA 3.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Alexander_Nevsky_Cathedral,_Sofia_(by_Pudelek).JPG"
+    },
+    {
+      "image": "assets/paysages/belgrade.webp",
+      "lieu": "Forteresse de Kalemegdan, Belgrade",
+      "etape": "Serbie — le Danube et la Save",
+      "credit": "Imeao · CC0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Belgrade_%E2%80%93_Kalemegdan_(2021)_03.jpg"
+    },
+    {
+      "image": "assets/paysages/budapest.webp",
+      "lieu": "Parlement de Budapest",
+      "etape": "Hongrie — le Danube",
+      "credit": "Bonnatia · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Budapest_Hungarian_Parliament_Palace.jpg"
+    },
+    {
+      "image": "assets/paysages/vienne.webp",
+      "lieu": "Château de Schönbrunn, Vienne",
+      "etape": "Autriche",
+      "credit": "Diego Delso · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Palacio_de_Sch%C3%B6nbrunn,_Viena,_Austria,_2020-02-02,_DD_07-09_HDR.jpg"
+    },
+    {
+      "image": "assets/paysages/prague.webp",
+      "lieu": "Prague au lever du soleil",
+      "etape": "Tchéquie",
+      "credit": "Valerii Tkachenko · CC BY 2.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Prague_sunrise_(8099151633).jpg"
+    },
+    {
+      "image": "assets/paysages/berlin.webp",
+      "lieu": "Porte de Brandebourg, Berlin",
+      "etape": "Allemagne",
+      "credit": "Norbert Nagel · CC BY-SA 3.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Brandenburg_Gate_-_Brandenburger_Tor_-_Berlin_-_Germany_-_01.jpg"
+    },
+    {
+      "image": "assets/paysages/mer-des-wadden.webp",
+      "lieu": "Mer des Wadden, Schleswig-Holstein",
+      "etape": "Allemagne — pays des cigognes",
+      "credit": "Akalanthis · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Wadden_Sea_Sunset,_Schleswig-Holstein.jpg"
+    },
+    {
+      "image": "assets/paysages/amsterdam.webp",
+      "lieu": "Maisons sur les canaux, Amsterdam",
+      "etape": "Pays-Bas",
+      "credit": "Basile Morin · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Colorful_canal_houses_at_golden_hour_in_Damrak_avenue_Amsterdam_the_Netherlands.jpg"
+    },
+    {
+      "image": "assets/paysages/bruxelles.webp",
+      "lieu": "Grand-Place de Bruxelles",
+      "etape": "Belgique",
+      "credit": "Celuici · CC BY-SA 4.0 · Wikimedia Commons",
+      "lien": "https://commons.wikimedia.org/wiki/File:Grand-Place,_Brussels_-_panorama,_June_2018.jpg"
+    }
+  ]
+}

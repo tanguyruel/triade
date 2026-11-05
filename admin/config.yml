@@ -43,6 +43,29 @@ media_libraries:
 collections:
 
   # --------------------------------------------------------------------------
+  - name: bandeau
+    label: "Photos du bandeau d'accueil"
+    icon: photo_library
+    files:
+      - name: bandeau
+        label: "Bandeau de photos (accueil et associations)"
+        file: content/bandeau.json
+        fields:
+          - { label: "Secondes entre deux photos", name: intervalle, widget: number, value_type: int, min: 3, max: 20, default: 7 }
+          - label: "Photos du bandeau"
+            name: photos
+            widget: list
+            label_singular: "photo"
+            summary: "{{fields.lieu}}"
+            hint: "Les photos défilent dans cet ordre. « Ajouter » pour une nouvelle photo, la poignée à gauche d'une ligne pour la déplacer, la corbeille pour la retirer. Fonctionne depuis un téléphone. Photo horizontale de préférence."
+            fields:
+              - { label: "Photo", name: image, widget: image, hint: "Photo horizontale, de préférence sans visage reconnaissable." }
+              - { label: "Lieu", name: lieu, widget: string, required: false, hint: "Affiché en légende. Exemple : Lac de Prespa" }
+              - { label: "Étape ou pays", name: etape, widget: string, required: false, hint: "Exemple : Grèce, étape du 8 avril" }
+              - { label: "Crédit", name: credit, widget: string, required: false, hint: "Obligatoire si la photo n'est pas de nous. Exemple : Tanguy, ou Nom du photographe · CC BY-SA 4.0" }
+              - { label: "Lien du crédit", name: lien, widget: string, required: false, hint: "Page d'origine de la photo, si elle vient d'ailleurs." }
+
+  # --------------------------------------------------------------------------
   - name: carnet
     label: "Journal de bord (photos et récits)"
     icon: edit_note
@@ -95,8 +118,8 @@ collections:
               - label: "Association"
                 name: association
                 widget: select
-                options: ["Rewilding Apennines", "PPNEA", "ARCTUROS", "EuroNatur", "NABU", "Autre rencontre"]
-                hint: "Choisissez « Autre rencontre » si la personne n'appartient à aucune des cinq associations."
+                options: ["Rewilding Apennines", "PPNEA", "ARCTUROS & Callisto", "EuroNatur", "NABU", "Autre rencontre"]
+                hint: "Choisissez « Autre rencontre » si la personne n'appartient à aucune des six associations."
               - { label: "Nom de la personne", name: personne, widget: string }
               - { label: "Rôle", name: role, widget: string, required: false, hint: "Exemple : garde-nature, chercheuse, bénévole" }
               - { label: "Date", name: date, widget: datetime, date_format: "DD/MM/YYYY", time_format: false, format: "YYYY-MM-DD", picker_utc: true, required: false }
@@ -118,7 +141,7 @@ collections:
     icon: forest
     files:
       - name: associations
-        label: "Les cinq associations"
+        label: "Les six associations"
         file: content/associations.json
         fields:
           - label: "Associations"
@@ -138,6 +161,11 @@ collections:
                 widget: select
                 options: ["Contact en cours", "Rencontre confirmée", "Rencontre réalisée"]
               - { label: "Logo", name: logo, widget: image, required: false }
+              - { label: "Deuxième logo (si deux associations travaillent ensemble)", name: logo2, widget: image, required: false }
+              - { label: "Texte alternatif du deuxième logo", name: logo2_alt, widget: string, required: false }
+              - { label: "Site de la deuxième association", name: site2, widget: string, required: false }
+              - { label: "Dessin d'animal", name: illustration, widget: select, required: false, options: [{ label: "Ours marsicain", value: ours-marsican }, { label: "Lynx des Balkans", value: lynx-balkans }, { label: "Loup", value: loup }, { label: "Cigogne", value: cigogne }, { label: "Oiseaux d'Allemagne", value: oiseaux-allemagne }, { label: "Phoque moine", value: phoque-moine }, { label: "Fleurs sauvages", value: vegetation }, { label: "Arbre", value: arbre }], hint: "Aquarelle affichée sur la fiche. À choisir selon l'espèce réellement suivie par l'association." }
+              - { label: "Texte alternatif du dessin", name: illustration_alt, widget: string, required: false, hint: "Description courte pour les personnes qui ne voient pas l'image. Exemple : Aquarelle d'un lynx" }
               - label: "Présentation"
                 name: description
                 widget: markdown

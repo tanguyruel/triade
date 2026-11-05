@@ -390,3 +390,132 @@ body { position: relative; }
   .deco--l { left: calc(50% - 560px - 230px); }
   .deco--r { left: calc(50% + 560px + 40px); }
 }
+
+/* ==========================================================================
+   Carnet naturaliste (29 oct.) : bandeau de paysages, grand TRIADE, dessins à l'encre et à l'aquarelle
+   Les dessins sont des PNG/WebP transparents (assets/illustrations/), posés sans cadre.
+   ========================================================================== */
+.vh { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+/* --- Bandeau : paysages qui glissent d'une photo à la suivante (content/bandeau.json) --- */
+.bandeau { position: relative; overflow: hidden; isolation: isolate; color: var(--cream); background: var(--forest); }
+.bandeau-track { position: absolute; inset: 0; display: flex; will-change: transform; z-index: -2; }
+.bandeau-track.glisse { transition: transform 1.5s cubic-bezier(.65, 0, .25, 1); }
+.bandeau-slide { flex: 0 0 100%; height: 100%; }
+.bandeau-slide img { width: 100%; height: 100%; object-fit: cover; }
+.bandeau::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(14, 40, 31, .62) 0%, rgba(14, 40, 31, .34) 42%, rgba(14, 40, 31, .78) 100%); }
+.bandeau--vide { background: var(--cream); color: var(--ink); }   /* sans photo : fond crème et dessins */
+.bandeau--vide::before { display: none; }
+.bandeau-bas { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 2; }
+.bandeau-bas .wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
+.bandeau-legende { margin: 0; font-size: .82rem; line-height: 1.35; color: rgba(247, 244, 235, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .5); max-width: 34rem; }
+.bandeau-legende b { font-weight: 600; letter-spacing: .02em; }
+.bandeau-legende a { color: inherit; }
+.bandeau-points { display: flex; gap: 4px; }
+.bandeau-points button { width: 28px; height: 28px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
+.bandeau-points button::after { content: ''; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--cream); transition: background .3s; }
+.bandeau-points button[aria-current="true"]::after { background: var(--cream); }
+
+/* --- Accueil : grand TRIADE et explication du sigle --- */
+.hero--bandeau { padding: 0; min-height: clamp(560px, 86vh, 780px); display: flex; align-items: center; text-align: center; }
+.hero--bandeau > .wrap { display: block; width: 100%; padding-top: clamp(40px, 7vw, 80px); padding-bottom: clamp(70px, 9vw, 110px); }
+.hero--bandeau .eyebrow { color: #F1C4AE; margin-bottom: clamp(10px, 2vw, 22px); }
+.triade-sigle { display: inline-grid; grid-template-columns: repeat(6, auto); column-gap: clamp(14px, 3.4vw, 46px); align-items: start; margin: 0 auto; }
+.triade-sigle > span { display: flex; flex-direction: column; align-items: center; }
+.triade-sigle i { font: 400 clamp(3.6rem, 13.5vw, 10.5rem)/.95 var(--f-display); font-style: normal; letter-spacing: -.01em; color: var(--cream); text-shadow: 0 2px 30px rgba(0, 0, 0, .35); }
+.triade-sigle small { margin-top: clamp(8px, 1.4vw, 14px); padding-top: clamp(8px, 1.2vw, 12px); border-top: 1.5px solid var(--terre); font: 500 clamp(.62rem, 1.15vw, .95rem)/1 var(--f-text); letter-spacing: .22em; text-transform: uppercase; color: var(--cream); white-space: nowrap; }
+.triade-sigle small b { color: #F4A582; font-weight: 700; }
+.hero--bandeau h1 { font-family: var(--f-display); font-weight: 400; font-size: clamp(1.25rem, 2.5vw, 1.8rem); line-height: 1.25; letter-spacing: 0; margin: clamp(26px, 4vw, 44px) auto 0; max-width: 34em; color: var(--cream); }
+.hero--bandeau h1 em { color: #F4A582; }
+.hero--bandeau .lede { color: rgba(247, 244, 235, .94); font-size: clamp(1rem, 1.6vw, 1.15rem); margin: 14px auto 28px; text-shadow: 0 1px 12px rgba(0, 0, 0, .4); }
+.hero--bandeau .row { justify-content: center; }
+.hero--bandeau .btn--ghost { color: var(--cream); border-color: var(--cream); background: transparent; }
+.hero--bandeau .btn--ghost:hover { background: var(--cream); color: var(--forest); }
+@media (max-width: 700px) {
+  .triade-sigle { grid-template-columns: repeat(3, auto); row-gap: 22px; column-gap: 20px; }
+  .triade-sigle small { letter-spacing: .14em; }
+}
+
+/* --- En-tête des pages intérieures : bandeau bas, la première fiche remonte dessus --- */
+.bandeau--page { min-height: clamp(250px, 34vh, 340px); display: flex; align-items: center; }
+.bandeau--page > .wrap { padding-top: clamp(24px, 4vw, 44px); padding-bottom: clamp(70px, 8vw, 96px); width: 100%; }
+.bandeau--page .h1 { font-size: clamp(1.9rem, 4.2vw, 3rem); color: var(--cream); }
+.bandeau--page .h1 em { color: #F4A582; }
+.bandeau--page .eyebrow { color: #F1C4AE; }
+.bandeau--page .lede { color: rgba(247, 244, 235, .95); font-size: clamp(1rem, 1.7vw, 1.15rem); margin-top: 10px; max-width: 40em; text-shadow: 0 1px 12px rgba(0, 0, 0, .4); }
+.remonte { position: relative; z-index: 3; margin-top: clamp(-64px, -6vw, -36px); }
+.acces { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.acces a { padding: 7px 15px; border-radius: 999px; border: 1px solid rgba(247, 244, 235, .6); color: var(--cream); text-decoration: none; font-size: .92rem; font-weight: 500; backdrop-filter: blur(3px); background: rgba(14, 40, 31, .25); }
+.acces a:hover { background: var(--cream); color: var(--forest); }
+
+/* --- Dessins : sans cadre, taille et position variées --- */
+.illu { display: block; height: auto; width: 100%; object-fit: contain; pointer-events: none; user-select: none; -webkit-user-drag: none; }
+.illu-note { margin: 4px 0 0; font: italic 400 .86rem/1.3 var(--f-display); color: var(--muted); text-align: center; }
+.asso { overflow: visible; position: relative; }
+.asso-side { border-radius: var(--r) 0 0 var(--r); }
+.asso-art { position: absolute; top: -34px; right: -14px; width: clamp(150px, 17vw, 215px); z-index: 2; transform: rotate(2deg); filter: drop-shadow(0 6px 10px rgba(40, 51, 47, .12)); }
+.asso:nth-child(even) .asso-art { right: auto; left: 316px; top: -26px; transform: rotate(-2deg); }
+.asso-tete { padding-right: clamp(140px, 17vw, 215px); }
+.asso:nth-child(even) .asso-tete { padding-right: 0; padding-left: clamp(140px, 17vw, 215px); }
+@media (max-width: 820px) {
+  .asso-art, .asso:nth-child(even) .asso-art { position: static; float: right; width: 120px; margin: -6px 0 6px 12px; transform: none; }
+  .asso-tete, .asso:nth-child(even) .asso-tete { padding: 0; }
+}
+.marge-dessin { display: none; }
+@media (min-width: 1440px) {
+  .marge-dessin { display: block; position: absolute; width: clamp(150px, 11vw, 200px); z-index: 0; opacity: .96; }
+  .marge-dessin--g { left: max(8px, calc((100vw - var(--wrap)) / 2 - 215px)); }
+  .marge-dessin--d { right: max(8px, calc((100vw - var(--wrap)) / 2 - 215px)); }
+}
+.page-dessins { position: relative; }
+.tete-dessin { position: absolute; width: clamp(110px, 15vw, 190px); }
+.deco-droite { float: right; width: clamp(130px, 18vw, 240px); margin: 0 0 12px 24px; }
+.deco-gauche { float: left; width: clamp(130px, 18vw, 240px); margin: 0 24px 12px 0; }
+@media (max-width: 700px) { .deco-droite, .deco-gauche { width: 120px; } }
+.pied-arbre { position: absolute; right: clamp(12px, 5vw, 72px); bottom: 100%; width: clamp(70px, 9vw, 110px); margin-bottom: -2px; }
+.site-footer { position: relative; }
+.ph--empty .illu { width: 62%; height: 100%; margin: 0 auto; }
+.wrap.rel { position: relative; }
+.tete-dessin { top: -8px; right: var(--gut); }
+@media (max-width: 900px) { .tete-dessin { display: none; } }
+@media (min-width: 901px) { .wrap.rel > .head { padding-right: clamp(120px, 16vw, 200px); } }
+.hero--bandeau .chip { background: rgba(14, 40, 31, .5); border-color: rgba(247, 244, 235, .55); color: var(--cream); backdrop-filter: blur(4px); }
+@media (max-width: 700px) {
+  .hero--bandeau > .wrap { padding-bottom: 150px; }
+  .bandeau--page > .wrap { padding-bottom: 150px; }
+  .bandeau-bas { bottom: 6px; }
+  .bandeau-legende { font-size: .74rem; }
+}
+.pied-arbre { bottom: 76px; right: max(var(--gut), calc((100vw - var(--wrap)) / 2 + var(--gut))); width: clamp(64px, 8vw, 96px); margin: 0; opacity: .95; }
+@media (max-width: 760px) { .pied-arbre { bottom: auto; top: 22px; } }
+
+/* --- Accueil, 5 nov. : faune dans « Le projet », cartes d'associations avec dessin, logos jumelés --- */
+.faune { position: absolute; top: -6px; right: var(--gut); width: clamp(240px, 27vw, 380px); aspect-ratio: 1 / .98; pointer-events: none; }
+.faune .illu { position: absolute; height: auto; filter: drop-shadow(0 6px 10px rgba(40, 51, 47, .10)); }
+.faune-ours { width: 50%; right: 0; top: 0; transform: rotate(1.5deg); }
+.faune-loup { width: 42%; left: 4%; top: 6%; transform: rotate(-2deg); }
+.faune-velo { width: 56%; left: -2%; bottom: 2%; }
+.faune-phoque { width: 42%; right: 2%; bottom: 0; }
+@media (min-width: 901px) { .wrap.rel > .head { padding-right: 0; max-width: 640px; } }
+@media (max-width: 900px) {
+  .faune { position: relative; top: auto; right: auto; width: min(380px, 100%); margin: 0 auto 22px; }
+}
+.mini-art-wrap { display: flex; align-items: flex-end; justify-content: center; height: 178px; padding: 16px 12px 0; background: var(--paper); }
+.mini-art { width: auto; max-width: 82%; height: 100%; object-fit: contain; }
+.assoc-mini .logo-tile { border-top: 1px solid var(--line); }
+.logo-tile--duo, .asso-logos { gap: 14px; }
+.logo-tile--duo img { max-width: 42%; }
+.logo-plus { font: 500 2rem/1 var(--f-display); color: var(--terre); }
+.asso-logos { display: flex; align-items: center; flex-wrap: wrap; }
+.asso-logos img { max-height: 70px; max-width: 46%; }
+.asso-logos:not(:has(.logo-plus)) img { max-width: 100%; max-height: 90px; }
+.polarsteps-note { display: inline-flex; align-items: center; gap: 10px; margin-top: 14px; padding: 9px 16px; border: 1px dashed var(--line); border-radius: 999px; background: var(--paper); color: var(--muted); font-size: .98rem; }
+.polarsteps-note b { color: var(--forest); font-weight: 600; }
+
+.pillar .picto { width: 68px; height: 68px; margin-bottom: 16px; }
+.polarsteps-note svg { width: 20px; height: 20px; flex: none; color: var(--terre); }
+.asso-logos { flex-wrap: nowrap; }
+.asso-side .asso-logos img { max-width: 44%; max-height: 74px; }
+.asso-side .asso-logos img:only-child { max-width: 100%; max-height: 90px; }
+.logo-plus { font: 600 1.7rem/1 var(--f-text); color: var(--terre); }
+.plantes-bas { width: clamp(110px, 12vw, 160px); margin: 36px auto 0; opacity: .95; }

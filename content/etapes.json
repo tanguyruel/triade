@@ -5,7 +5,7 @@
     { "nom": "Ancône", "detail": "Puis ferry vers Zadar, Croatie", "periode": "Mi-mars", "km": "800", "association": false, "fait": false },
     { "nom": "PPNEA", "detail": "Lynx des Balkans · Albanie", "periode": "Fin mars", "km": "1 110", "association": true, "fait": false },
     { "nom": "Tirana", "detail": "Albanie", "periode": "Fin mars", "km": "1 460", "association": false, "fait": false },
-    { "nom": "ARCTUROS", "detail": "Région de Florina, Grèce", "periode": "Début avril", "km": "1 880", "association": true, "fait": false },
+    { "nom": "ARCTUROS & Callisto", "detail": "Région de Florina, Grèce", "periode": "Début avril", "km": "1 880", "association": true, "fait": false },
     { "nom": "Sofia", "detail": "Bulgarie", "periode": "Mi-avril", "km": "2 320", "association": false, "fait": false },
     { "nom": "Belgrade", "detail": "Serbie", "periode": "Fin avril", "km": "2 870", "association": false, "fait": false },
     { "nom": "EuroNatur", "detail": "Région de Szeged, Hongrie", "periode": "Début mai", "km": "3 220", "association": true, "fait": false },
