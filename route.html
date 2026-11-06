@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sur la route — TRIADE</title>
+<meta name="description" content="Notre position en direct, nos photos, nos vidéos et nos étapes : suivez TRIADE sur la route, de Grasse à la mer du Nord et retour.">
+<meta name="theme-color" content="#F7F4EB">
+<link rel="icon" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TRIADE">
+<meta property="og:title" content="Sur la route — TRIADE">
+<meta property="og:description" content="Notre position en direct, nos photos, nos vidéos et nos étapes.">
+<meta property="og:image" content="https://tanguyruel.github.io/triade/assets/img/og-image.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/style.css?v=20261106e">
+<script src="assets/js/langues.js?v=20261106e" defer></script>
+<script src="assets/js/site.js?v=20261106e" defer></script>
+</head>
+<body data-page="route">
+<a class="skip" href="#contenu">Aller au contenu</a>
+<noscript><p class="annonce">Ce site a besoin de JavaScript pour afficher son contenu. En attendant, retrouvez-nous sur Instagram&nbsp;: @triade.europe · This site needs JavaScript to display its content. Meanwhile, find us on Instagram: @triade.europe</p></noscript>
+<div id="site-header"></div>
+
+<main id="contenu" tabindex="-1">
+<!--STATIQUE:début--><noscript><h1>Sur la route : position, photos et étape par étape</h1><p>3 étudiants, 6 associations, 7 500 km prévus, 18 pays prévus, de mars à août 2027 (départ début mars 2027).</p><h2>Étape par étape (prévu)</h2><ol><li>Grasse — France · départ (Début mars, km 0)</li><li>Rewilding Apennines — Région de Florence, Italie (Début mars, km 510, association partenaire)</li><li>Ancône — Puis ferry vers Zadar, Croatie (Mi-mars, km 800)</li><li>PPNEA — Lynx des Balkans · Albanie (Fin mars, km 1 110, association partenaire)</li><li>Tirana — Albanie (Fin mars, km 1 460)</li><li>ARCTUROS &amp; Callisto — Région de Florina, Grèce (Début avril, km 1 880, association partenaire)</li><li>Sofia — Bulgarie (Mi-avril, km 2 320)</li><li>Belgrade — Serbie (Fin avril, km 2 870)</li><li>EuroNatur — Région de Szeged, Hongrie (Début mai, km 3 220, association partenaire)</li><li>Budapest — Hongrie (Mi-mai, km 3 840)</li><li>Vienne — Autriche (Fin mai, km 4 220)</li><li>Prague — Tchéquie (Début juin, km 4 560)</li><li>Berlin — Allemagne (Mi-juin, km 5 250)</li><li>NABU · Michael-Otto-Institut — Bergenhusen, Allemagne (Du 20 juin au 5 juillet environ, km 5 620, association partenaire)</li><li>Amsterdam — Pays-Bas (Mi-juillet, km 6 160)</li><li>Bruxelles — Belgique (Mi-juillet, km 6 350)</li><li>Grasse — France · arrivée (Début août, km 7 520)</li></ol><h2>Suivre</h2><ul><li>E-mail : <a href="mailto:triade.europe@gmail.com">triade.europe@gmail.com</a></li><li>Instagram : <a href="https://www.instagram.com/triade.europe">@triade.europe</a></li><li>TikTok : <a href="https://www.tiktok.com/@triade692">@triade692</a></li><li>Komoot : <a href="https://www.komoot.com/user/6295100499846">Itinéraire sur Komoot</a></li></ul></noscript><!--STATIQUE:fin-->
+  <!-- Titre de la page -->
+  <section class="section section--tight hors-lecture">
+    <div class="wrap">
+      <div class="head" style="margin-bottom:0">
+        <p class="eyebrow" data-i18n="nav_route">Sur la route</p>
+        <h1 class="h1" style="font-size:clamp(2.2rem,5vw,3.6rem)" data-i18n="route_h1">Notre route, <em>en direct</em></h1>
+        <p class="lede" data-i18n="route_lede">Notre position, nos photos, nos vidéos et nos étapes, au fil des kilomètres.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 1. EN DIRECT : notre position et la carte Polarsteps -->
+  <section class="section section--white hors-lecture" id="en-direct">
+    <div class="wrap split">
+      <div>
+        <p class="eyebrow" data-i18n="live_eyebrow">En direct</p>
+        <h2 class="h2" data-i18n="pos_where_now">Où sommes-nous <em>maintenant</em>&nbsp;?</h2>
+        <div class="next" id="position" style="margin-top:22px"></div>
+      </div>
+      <div id="polarsteps"></div>
+    </div>
+  </section>
+
+  <!-- 2. PHOTOS ET VIDÉOS : le journal (cartes, puis récit complet à l'adresse #…) -->
+  <section class="section" id="photos">
+    <div class="wrap">
+      <div class="head" id="photos-tete">
+        <p class="eyebrow" data-i18n="photos_eyebrow">Photos et vidéos</p>
+        <h2 class="h2" data-i18n="photos_h2">Au fil des <em>jours</em></h2>
+        <p class="lede" data-i18n="photos_lede">Les photos et les récits de la route, du plus récent au plus ancien.</p>
+      </div>
+      <div id="fil"></div>
+    </div>
+  </section>
+
+  <!-- 3. ÉTAPE PAR ÉTAPE : la carte et la liste des étapes -->
+  <section class="section section--white hors-lecture" id="etapes-section">
+    <div class="wrap">
+      <div class="head" id="etapes">
+        <p class="eyebrow" data-i18n="stages_eyebrow">Étape par étape</p>
+        <h2 class="h2" data-i18n="stages_h2">Une boucle de <em>7 500 km</em> à travers l’Europe</h2>
+        <p class="lede" data-i18n="stages_lede">Départ et arrivée à Grasse, de mars à août 2027. Six associations sur la route.</p>
+        <p class="muted small" style="margin-top:12px" data-i18n="stages_hint">Les cercles verts sont les associations. Les kilomètres sont cumulés depuis Grasse.</p>
+      </div>
+      <div class="split split--etapes">
+        <ol class="steps" id="etapes-liste"></ol>
+        <div>
+          <div class="map"><img src="assets/img/carte-itineraire.webp" alt="Carte de l’itinéraire de TRIADE à travers l’Europe" data-i18n-attr="alt:map_alt_short" width="1800" height="1688" loading="lazy"></div>
+          <p class="map-caption" data-i18n="map_caption">En orange&nbsp;: l’itinéraire à vélo. En pointillé&nbsp;: le ferry d’Ancône à Zadar. Points foncés&nbsp;: les associations.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div id="site-footer"></div>
+</body>
+</html>

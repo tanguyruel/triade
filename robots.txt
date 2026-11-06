@@ -1,0 +1,14 @@
+# Robots d'IA et moteurs de recherche autorisés (voir generer_acces_ia.py)
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: *
+Allow: /
+
+Sitemap: https://tanguyruel.github.io/triade/sitemap.xml

@@ -406,15 +406,17 @@ body { position: relative; }
 .bandeau::before { content: ''; position: absolute; inset: 0; z-index: -1; background: linear-gradient(180deg, rgba(14, 40, 31, .62) 0%, rgba(14, 40, 31, .34) 42%, rgba(14, 40, 31, .78) 100%); }
 .bandeau--vide { background: var(--cream); color: var(--ink); }   /* sans photo : fond crème et dessins */
 .bandeau--vide::before { display: none; }
-.bandeau-bas { position: absolute; left: 0; right: 0; bottom: 14px; z-index: 2; }
-.bandeau-bas .wrap { display: flex; justify-content: space-between; align-items: flex-end; gap: 16px; flex-wrap: wrap; }
-.bandeau-legende { margin: 0; font-size: .82rem; line-height: 1.35; color: rgba(247, 244, 235, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .5); max-width: 34rem; }
-.bandeau-legende b { font-weight: 600; letter-spacing: .02em; }
+/* Légende de la photo : à droite de l'image, petite, centrée (lieu = lien Google Maps, puis étape, puis crédit) */
+.bandeau-legende { position: absolute; z-index: 2; left: 0; right: 0; bottom: 12px; margin: 0 auto; width: min(92%, 30rem); display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; font-size: .72rem; line-height: 1.35; color: rgba(247, 244, 235, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .55); }
+.bandeau-legende .lieu { display: inline-flex; align-items: center; justify-content: center; gap: 5px; font-weight: 600; font-size: .78rem; letter-spacing: .02em; color: #fff; text-decoration: none; }
+.bandeau-legende a.lieu:hover { text-decoration: underline; text-underline-offset: 3px; color: #fff; }
+.bandeau-legende .lieu svg { width: 13px; height: 13px; flex: none; }
+.bandeau-legende .etape { opacity: .95; }
+.bandeau-legende .credit { font-size: .66rem; opacity: .8; }
 .bandeau-legende a { color: inherit; }
-.bandeau-points { display: flex; gap: 4px; }
-.bandeau-points button { width: 28px; height: 28px; padding: 0; border: 0; background: transparent; cursor: pointer; display: grid; place-items: center; }
-.bandeau-points button::after { content: ''; width: 9px; height: 9px; border-radius: 50%; border: 1.5px solid var(--cream); transition: background .3s; }
-.bandeau-points button[aria-current="true"]::after { background: var(--cream); }
+@media (min-width: 1360px) {
+  .bandeau-legende { left: auto; right: clamp(14px, 1.8vw, 34px); bottom: auto; top: 50%; transform: translateY(-50%); margin: 0; width: clamp(150px, 11.5vw, 190px); }
+}
 
 /* --- Accueil : grand TRIADE et explication du sigle --- */
 .hero--bandeau { padding: 0; min-height: clamp(560px, 86vh, 780px); display: flex; align-items: center; text-align: center; }
@@ -483,8 +485,7 @@ body { position: relative; }
 @media (max-width: 700px) {
   .hero--bandeau > .wrap { padding-bottom: 150px; }
   .bandeau--page > .wrap { padding-bottom: 150px; }
-  .bandeau-bas { bottom: 6px; }
-  .bandeau-legende { font-size: .74rem; }
+  .bandeau-legende { bottom: 6px; }
 }
 .pied-arbre { bottom: 76px; right: max(var(--gut), calc((100vw - var(--wrap)) / 2 + var(--gut))); width: clamp(64px, 8vw, 96px); margin: 0; opacity: .95; }
 @media (max-width: 760px) { .pied-arbre { bottom: auto; top: 22px; } }
@@ -519,3 +520,48 @@ body { position: relative; }
 .asso-side .asso-logos img:only-child { max-width: 100%; max-height: 90px; }
 .logo-plus { font: 600 1.7rem/1 var(--f-text); color: var(--terre); }
 .plantes-bas { width: clamp(110px, 12vw, 160px); margin: 36px auto 0; opacity: .95; }
+
+/* ==========================================================================
+   6 nov. 2026 : choix de la langue, page « Sur la route », sponsors
+   ========================================================================== */
+/* --- Choix de la langue (en-tête) --- */
+.lang { position: relative; display: inline-flex; align-items: center; }
+.lang svg { position: absolute; left: 11px; width: 17px; height: 17px; color: var(--forest); pointer-events: none; }
+.lang select { appearance: none; -webkit-appearance: none; height: 42px; padding: 0 30px 0 34px; border: 1px solid var(--line); border-radius: 999px; background: var(--paper) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5l5 5 5-5' fill='none' stroke='%23173D32' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 12px center; color: var(--ink); font: 500 .92rem/1 var(--f-text); cursor: pointer; }
+.lang select:hover { border-color: var(--forest); }
+@media (max-width: 520px) {
+  .site-header .wrap { gap: 8px; }
+  .brand-name { display: none; }
+  .bar-right { gap: 8px; }
+  .lang select { padding-left: 32px; padding-right: 26px; font-size: .86rem; background-position: right 9px center; }
+  .btn--nav { padding: 0 14px; }
+}
+
+/* --- Page « Sur la route » --- */
+.split--etapes { align-items: start; grid-template-columns: 1fr 1fr; }
+.split--etapes .steps { max-width: 560px; }
+@media (min-width: 861px) { .split--etapes > div:last-child { position: sticky; top: 110px; } }
+@media (max-width: 860px) { .split--etapes { grid-template-columns: 1fr; } }
+#photos, #etapes, #en-direct { scroll-margin-top: 96px; }
+
+/* --- Sponsors et soutiens --- */
+.logo-tile b { font: 400 1.7rem/1.1 var(--f-display); color: var(--forest); text-align: center; }
+a.logo-tile { text-decoration: none; }
+.soutien--libre { border-style: dashed; background: transparent; }
+.soutien--libre .card-body { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.soutien--libre .btn { margin-top: 12px; }
+
+/* Chiffres clés : les longs mots (grec, allemand) passent à la ligne au lieu de déborder */
+.figures { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.fig { min-width: 0; }
+.fig span { overflow-wrap: anywhere; }
+@media (max-width: 760px) { .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); } .fig span { letter-spacing: .1em; } }
+
+/* Portraits de l'équipe, juste après le texte du projet */
+.tetes { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 18px clamp(20px, 4vw, 44px); }
+.tetes li { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.tetes img { width: clamp(88px, 14vw, 132px); height: auto; aspect-ratio: 1; border-radius: 50%; display: block; }
+.tetes b { font-weight: 600; }
+.head--centre { margin-inline: auto; text-align: center; }
+.head--suite { margin-top: clamp(40px, 6vw, 72px); }
+.section--projet .more { text-align: center; }

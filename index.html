@@ -16,21 +16,23 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preload" href="assets/fonts/bodoni-moda-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/jost-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/style.css?v=20261105g">
-<script src="assets/js/site.js?v=20261105g" defer></script>
+<link rel="stylesheet" href="assets/css/style.css?v=20261106e">
+<script src="assets/js/langues.js?v=20261106e" defer></script>
+<script src="assets/js/site.js?v=20261106e" defer></script>
 </head>
 <body data-page="accueil">
-<a class="skip" href="#contenu">Aller au contenu</a>
-<noscript><p class="annonce">Ce site a besoin de JavaScript pour afficher son contenu. En attendant, retrouvez-nous sur Instagram&nbsp;: @triade.europe</p></noscript>
+<a class="skip" href="#contenu" data-i18n="skip">Aller au contenu</a>
+<noscript><p class="annonce">Ce site a besoin de JavaScript pour afficher son contenu. En attendant, retrouvez-nous sur Instagram&nbsp;: @triade.europe · This site needs JavaScript to display its content. Meanwhile, find us on Instagram: @triade.europe</p></noscript>
 <div id="site-header"></div>
 
 <main id="contenu" tabindex="-1">
+<!--STATIQUE:début--><noscript><h1>TRIADE — Three Riders In Adventure Discovering Europe</h1><h2>Une boucle européenne pour rencontrer ceux qui protègent la nature</h2><p>Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, nous traversons l’Europe à vélo pour rencontrer six associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.</p><p>3 étudiants, 6 associations, 7 500 km prévus, 18 pays prévus, de mars à août 2027 (départ début mars 2027).</p><h2>Les associations</h2><ul><li><strong>Rewilding Apennines</strong> — Ours brun marsicain (Italie, Début mars) <a href="https://rewilding-apennines.com">https://rewilding-apennines.com</a></li><li><strong>PPNEA</strong> — Lynx des Balkans (Albanie, Fin mars) <a href="https://ppnea.org">https://ppnea.org</a></li><li><strong>ARCTUROS &amp; Callisto</strong> — Ours brun et loup (Grèce, Début avril) <a href="https://www.arcturos.gr">https://www.arcturos.gr</a></li><li><strong>EuroNatur</strong> — Ceinture verte européenne (Hongrie, Début mai) <a href="https://www.euronatur.org">https://www.euronatur.org</a></li><li><strong>NABU</strong> — Cigognes et oiseaux (Allemagne, Du 20 juin au 5 juillet environ) <a href="https://www.nabu.de">https://www.nabu.de</a></li></ul><h2>Ils nous soutiennent</h2><ul><li><strong>Komoot</strong> — Notre itinéraire est tracé sur Komoot. <a href="https://www.komoot.com">https://www.komoot.com</a></li></ul><h2>Contact</h2><ul><li>E-mail : <a href="mailto:triade.europe@gmail.com">triade.europe@gmail.com</a></li><li>Instagram : <a href="https://www.instagram.com/triade.europe">@triade.europe</a></li><li>TikTok : <a href="https://www.tiktok.com/@triade692">@triade692</a></li><li>Komoot : <a href="https://www.komoot.com/user/6295100499846">Itinéraire sur Komoot</a></li></ul><p>Autres pages : <a href="route.html">Sur la route</a>, <a href="associations.html">Associations</a>, <a href="soutiens.html">Ils nous soutiennent</a>, <a href="llms.txt">résumé en texte</a>.</p></noscript><!--STATIQUE:fin-->
 
   <!-- ACCUEIL : grand TRIADE sur le bandeau de paysages (content/bandeau.json) -->
   <section class="hero hero--bandeau bandeau" id="bandeau">
     <div class="wrap">
       <p class="chip" hidden><i></i><span id="compte-a-rebours"></span></p>
-      <p class="eyebrow">Projet étudiant et associatif</p>
+      <p class="eyebrow" data-i18n="hero_eyebrow">Projet étudiant et associatif</p>
       <p class="vh">TRIADE : Three Riders In Adventure Discovering Europe</p>
       <div class="triade-sigle" aria-hidden="true">
         <span><i>T</i><small><b>T</b>hree</small></span>
@@ -40,47 +42,36 @@
         <span><i>D</i><small><b>D</b>iscovering</small></span>
         <span><i>E</i><small><b>E</b>urope</small></span>
       </div>
-      <h1>À vélo pour celles et ceux qui protègent <em>le vivant</em></h1>
-      <p class="lede">Trois étudiants, trois vélos, <span data-bind="chiffres_km"></span> km à travers l’Europe, <span data-bind="periode_texte"></span>, à la rencontre d’associations de protection de la biodiversité.</p>
+      <h1 data-i18n="hero_h1">À vélo pour celles et ceux qui protègent <em>le vivant</em></h1>
+      <p class="lede" data-i18n="hero_lede">Trois étudiants, trois vélos, <span data-bind="chiffres_km"></span> km à travers l’Europe, <span data-bind="periode_texte"></span>, à la rencontre d’associations de protection de la biodiversité.</p>
       <div class="row">
-        <a class="btn" data-href="instagram">Suivre l’aventure</a>
-        <a class="btn btn--ghost" href="cagnotte.html">Soutenir les associations</a>
+        <a class="btn" data-href="instagram" data-i18n="hero_btn1">Suivre l’aventure</a>
+        <a class="btn btn--ghost" href="cagnotte.html" data-i18n="support_assos">Soutenir les associations</a>
       </div>
     </div>
   </section>
 
   <!-- CHIFFRES : remplis automatiquement (content/reglages.json) -->
-  <section class="stripe" aria-label="Chiffres clés">
+  <section class="stripe" data-i18n-attr="aria-label:fig_aria" aria-label="Chiffres clés">
     <div class="wrap"><div class="figures" id="chiffres"></div></div>
   </section>
 
-  <!-- LE PROJET -->
-  <section class="section">
-    <div class="wrap rel">
-      <div class="head">
-        <p class="eyebrow">Le projet</p>
-        <h2 class="h2">Une boucle européenne pour rencontrer ceux qui <em>protègent la nature</em></h2>
-        <p class="lede">Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant <span data-bind="chiffres_mois"></span> mois, nous traversons l’Europe à vélo pour rencontrer six associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.</p>
-        <p class="school"><a href="https://institut-agro-montpellier.fr" target="_blank" rel="noopener"><img src="assets/img/logo-institut-agro.webp" alt="L’Institut Agro Montpellier, école des trois étudiants" width="170" height="66" loading="lazy"></a></p>
-      </div>
-      <div class="pillars">
-        <div class="pillar"><img class="picto" src="assets/img/picto-rouler.svg" alt="" width="48" height="48"><h3>Rouler</h3><p>Trois vélos, en autonomie, sur les petites routes et les voies vertes quand c’est possible.</p></div>
-        <div class="pillar"><img class="picto" src="assets/img/picto-rencontrer.svg" alt="" width="48" height="48"><h3>Rencontrer</h3><p>Six associations de terrain. Sur place, nous donnons un coup de main et nous recueillons leurs témoignages.</p></div>
-        <div class="pillar"><img class="picto" src="assets/img/picto-partager.svg" alt="" width="48" height="48"><h3>Partager</h3><p>Photos, vidéos et récits au fil de la route, ici, sur Instagram et sur TikTok. Et une cagnotte pour soutenir les associations.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LES ASSOCIATIONS -->
-  <section class="section section--white">
+  <!-- LE PROJET puis LES ASSOCIATIONS : un seul bloc, sans rupture -->
+  <section class="section section--projet">
     <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Les associations</p>
-        <h2 class="h2">Six associations pour <em>protéger le vivant</em></h2>
-        <p class="lede">Chacune défend un territoire et une espèce. Nous irons les voir, donner un coup de main sur place et raconter leur travail.</p>
+      <div class="head head--centre">
+        <p class="eyebrow" data-i18n="proj_eyebrow">Le projet</p>
+        <h2 class="h2" data-i18n="proj_h2">Une boucle européenne pour rencontrer ceux qui <em>protègent la nature</em></h2>
+        <p class="lede" data-i18n="proj_lede">Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, nous traversons l’Europe à vélo pour rencontrer six associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.</p>
+      </div>
+      <ul class="tetes" id="equipe-tetes" aria-label="Les trois membres de l’équipe" data-i18n-attr="aria-label:team_aria"></ul>
+      <div class="head head--centre head--suite">
+        <p class="eyebrow" data-i18n="assos_eyebrow">Les associations</p>
+        <h2 class="h2" data-i18n="assos_h2">Six associations pour <em>protéger le vivant</em></h2>
+        <p class="lede" data-i18n="assos_lede_home">Chacune défend un territoire et une espèce. Nous irons les voir, donner un coup de main sur place et raconter leur travail.</p>
       </div>
       <div class="grid grid--3" id="assos-apercu"></div>
-      <p class="more"><a class="link-arrow" href="associations.html">Découvrir les associations et leurs témoignages</a></p>
+      <p class="more"><a class="link-arrow" href="associations.html" data-i18n="assos_more">Découvrir les associations et leurs témoignages</a></p>
     </div>
   </section>
 
@@ -88,13 +79,13 @@
   <section class="section">
     <div class="wrap split">
       <div>
-        <p class="eyebrow">L’itinéraire</p>
-        <h2 class="h2">De la Côte d’Azur à la <em>mer du Nord</em>, par les Balkans</h2>
-        <p class="lede" style="margin-top:18px">Des Apennins aux Balkans, du Danube à la mer du Nord&nbsp;: un seul trajet, six associations.</p>
+        <p class="eyebrow" data-i18n="itin_eyebrow">L’itinéraire</p>
+        <h2 class="h2" data-i18n="itin_h2">De la Côte d’Azur à la <em>mer du Nord</em>, par les Balkans</h2>
+        <p class="lede" style="margin-top:18px" data-i18n="itin_lede">Des Apennins aux Balkans, du Danube à la mer du Nord&nbsp;: un seul trajet, six associations.</p>
         <div class="next" id="position"></div>
-        <p class="more"><a class="btn btn--ghost" href="suivi.html">Voir toutes les étapes</a></p>
+        <p class="more"><a class="btn btn--ghost" href="route.html#etapes" data-i18n="itin_btn">Voir toutes les étapes</a></p>
       </div>
-      <div class="map"><img src="assets/img/carte-itineraire.webp" alt="Carte de l’itinéraire : Grasse, Italie, Albanie, Grèce, Bulgarie, Serbie, Hongrie, Autriche, Tchéquie, Allemagne, Pays-Bas, Belgique, retour à Grasse" width="1800" height="1688" loading="lazy"></div>
+      <div class="map"><img src="assets/img/carte-itineraire.webp" data-i18n-attr="alt:map_alt" alt="Carte de l’itinéraire : Grasse, Italie, Albanie, Grèce, Bulgarie, Serbie, Hongrie, Autriche, Tchéquie, Allemagne, Pays-Bas, Belgique, retour à Grasse" width="1800" height="1688" loading="lazy"></div>
     </div>
   </section>
 
@@ -102,34 +93,19 @@
   <section class="section section--white">
     <div class="wrap">
       <div class="head">
-        <p class="eyebrow">Journal de bord</p>
-        <h2 class="h2">Dernières nouvelles</h2>
+        <p class="eyebrow" data-i18n="nav_route">Sur la route</p>
+        <h2 class="h2" data-i18n="news_h2">Dernières nouvelles</h2>
       </div>
       <div id="actus"></div>
-      <p class="more"><a class="link-arrow" href="journal.html">Tout le journal</a></p>
+      <p class="more"><a class="link-arrow" href="route.html#photos" data-i18n="news_more">Voir toutes les nouvelles</a></p>
     </div>
   </section>
 
   <!-- ILS NOUS SOUTIENNENT : masqué tant que la liste est vide (content/soutiens.json) -->
   <section class="section section--tight" id="soutiens" hidden>
     <div class="wrap">
-      <div class="head"><p class="eyebrow">Ils nous soutiennent</p></div>
+      <div class="head"><p class="eyebrow" data-i18n="nav_supporters">Ils nous soutiennent</p></div>
       <div class="grid grid--3" id="soutiens-liste"></div>
-    </div>
-  </section>
-
-  <!-- APPEL AU DON -->
-  <section class="section section--forest cta-band">
-    <div class="wrap">
-      <div class="head">
-        <p class="eyebrow">Soutenir</p>
-        <h2 class="h2">Donner un coup de pouce à celles et ceux qui protègent <em>le vivant</em></h2>
-        <p class="lede" style="margin-inline:auto">La cagnotte TRIADE soutient les associations que nous rencontrons.</p>
-      </div>
-      <div class="row">
-        <a class="btn" href="cagnotte.html">Voir la cagnotte</a>
-        <a class="btn btn--ghost" data-href="instagram">Nous suivre sur Instagram</a>
-      </div>
     </div>
   </section>
 

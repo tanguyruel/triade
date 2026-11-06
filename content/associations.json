@@ -12,7 +12,8 @@
       "site": "https://rewilding-apennines.com",
       "don_url": "",
       "illustration": "ours-marsican",
-      "illustration_alt": "Aquarelle d’un ours brun marsicain"
+      "illustration_alt": "Aquarelle d’un ours brun marsicain",
+      "espece_accueil": "Loup"
     },
     {
       "nom": "PPNEA",
@@ -43,7 +44,8 @@
       "illustration_alt": "Aquarelle d’un loup gris",
       "logo2": "assets/img/asso-callisto.webp",
       "logo2_alt": "Callisto, organisation grecque pour la faune sauvage et la nature",
-      "site2": "https://callisto.gr/en/"
+      "site2": "https://callisto.gr/en/",
+      "espece_accueil": "Ours brun|Ours brun"
     },
     {
       "nom": "EuroNatur",

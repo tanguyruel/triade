@@ -11,11 +11,12 @@ Lire **[GUIDE.md](GUIDE.md)** : l'espace équipe (`/admin/`) permet d'ajouter de
 ## Structure
 
 ```
-index.html, suivi.html, associations.html, rencontres.html, journal.html,
-cagnotte.html, aventure.html, soutiens.html, presse.html, mentions.html   → les pages
+index.html, route.html (« Sur la route » : position en direct, photos et vidéos, étapes),
+associations.html, rencontres.html, soutiens.html, cagnotte.html, presse.html, mentions.html   → les pages
+suivi.html, journal.html, aventure.html   → simples redirections des anciennes adresses
 content/*.json      → TOUT le texte modifiable (l'espace équipe écrit ici)
 photos/             → les photos envoyées depuis l'espace équipe
-assets/css/style.css, assets/js/site.js, assets/img, assets/fonts   → mise en page
+assets/css/style.css, assets/js/site.js, assets/js/langues.js (traductions), assets/img, assets/fonts   → mise en page
 admin/              → l'espace équipe (Sveltia CMS) et sa configuration config.yml
 ```
 

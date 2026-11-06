@@ -21,9 +21,9 @@ L'espace équipe se trouve à l'adresse du site suivie de `/admin/`
 
 ---
 
-## 2. Au quotidien : publier une journée dans le journal de bord
+## 2. Au quotidien : publier une journée sur « Sur la route »
 
-1. Espace équipe → menu de gauche **« Journal de bord »** → **« Ajouter une entrée »**.
+1. Espace équipe → menu de gauche **« Sur la route : photos et récits »** → **« Ajouter une entrée »**.
 2. Remplis les cases :
    - **Date et heure** : déjà remplie avec « maintenant ». L'heure sert au bandeau « Position en direct ».
    - **Auteur** : qui a écrit.
@@ -47,12 +47,12 @@ La carte s'affiche sur l'accueil (« À la une » si elle a une photo) et dans l
 | Dire « nous avons quitté cette étape » | **Étapes du voyage** | Cocher **« Étape passée »**. La frise avance toute seule. |
 | Mettre à jour les kilomètres | **Réglages** | « Kilomètres déjà parcourus » et « Pays déjà traversés ». Tant que c'est vide, le site affiche les chiffres prévus. |
 | Ajouter un bandeau « Départ dans 10 jours ! » | **Réglages** | Case « Bandeau d'annonce ». Vide = pas de bandeau. |
-| Mettre TikTok, YouTube, Polarsteps | **Réglages** | Colle l'adresse. Vide = l'icône n'apparaît pas. |
+| Mettre TikTok, Komoot, YouTube, Polarsteps | **Réglages** | Colle l'adresse. Vide = l'icône n'apparaît pas. TikTok et Komoot sont déjà renseignés (pied de page). |
 | Ouvrir la cagnotte | **Cagnotte** | Colle le « Lien de la cagnotte ». Tant que c'est vide : « La cagnotte ouvre bientôt ». |
 | Mettre à jour le montant collecté | **Cagnotte** | « Objectif » et « Déjà collecté » (un nombre). La barre de progression apparaît. |
-| Remercier quelqu'un qui nous aide | **Ils nous aident** | Seulement **après son accord écrit**. Tant que la liste est vide, l'entrée n'apparaît pas dans le menu. |
+| Remercier un sponsor ou quelqu'un qui nous aide | **Sponsors et soutiens** | Seulement **après son accord**. Il apparaît sur la page « Ils nous soutiennent » (Komoot y est déjà). Un emplacement « D'autres soutiens bientôt » reste affiché à la suite. |
+| Changer la légende d'une photo du bandeau | **Photos du bandeau d'accueil** | Le lieu devient un lien Google Maps (case « Recherche Google Maps »). L'intervalle entre deux photos est de 20 secondes. |
 | Ajouter un article de presse | **Presse** | L'entrée « Presse » apparaît alors dans le menu. |
-| Changer une photo ou un texte de l'équipe | **Équipe** | Modifier la fiche. |
 
 ---
 
@@ -84,4 +84,5 @@ La carte s'affiche sur l'accueil (« À la une » si elle a une photo) et dans l
 - Connexion : par jeton d'accès (« Fine-grained token », droit **Contents : Read and write** sur ce dépôt). Pour un vrai bouton « Se connecter avec GitHub », il faut déployer le [Sveltia CMS Authenticator](https://github.com/sveltia/sveltia-cms-auth) (Cloudflare Workers, gratuit) et ajouter `base_url:` dans `config.yml`.
 - Aperçu local : `python3 -m http.server 8000` dans ce dossier, puis `http://localhost:8000` (ouvrir `index.html` en double-cliquant ne marche pas : le navigateur bloque la lecture des fichiers JSON).
 - Couleurs et polices : variables au début de `assets/css/style.css`.
+- **Langues** : français, anglais, allemand, italien, grec (sélecteur dans l'en-tête, choix mémorisé, `?lang=de` dans l'adresse pour forcer). Tous les textes fixes et les textes venant de `content/*.json` (associations, étapes, légendes des photos, cagnotte) sont dans **`assets/js/langues.js`**, une ligne par texte avec ses 5 versions côte à côte. Pour un texte venant de `content/` la clé est le texte français exact : si l'équipe le modifie dans l'espace équipe, la traduction ne correspond plus et le site affiche le français ; il faut alors mettre à jour la ligne correspondante. Les récits du journal et les interviews restent dans la langue où ils sont écrits (la page l'indique). Relecture par des locutrices ou locuteurs recommandée (surtout grec et allemand).
 - Nouvelle page : copier une page existante, changer `data-page`, ajouter une fonction dans `pages` de `assets/js/site.js`, et l'entrée dans `NAV`.

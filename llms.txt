@@ -1,0 +1,61 @@
+# TRIADE
+
+> Three Riders In Adventure Discovering Europe : trois étudiants de l’Institut Agro Montpellier traversent l’Europe à vélo (de mars à août 2027) pour rencontrer six associations de protection de la nature.
+
+Site : https://tanguyruel.github.io/triade/
+
+## Le projet
+
+Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, nous traversons l’Europe à vélo pour rencontrer six associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.
+
+3 étudiants, 6 associations, 7 500 km prévus, 18 pays prévus, de mars à août 2027 (départ début mars 2027).
+
+## Les associations
+
+- **Rewilding Apennines** (Italie, Début mars) — Ours brun marsicain : Une association qui œuvre au retour d’une nature sauvage dans les Apennins centraux, où vit l’ours brun marsicain, l’un des ours les plus menacés d’Europe. https://rewilding-apennines.com
+- **PPNEA** (Albanie, Fin mars) — Lynx des Balkans : Protection and Preservation of Natural Environment in Albania : une association albanaise de protection de la nature, engagée notamment pour le lynx des Balkans, un des félins les plus rares d’Europe. https://ppnea.org
+- **ARCTUROS & Callisto** (Grèce, Début avril) — Ours brun et loup : Deux associations grecques qui travaillent ensemble, et avec lesquelles nous travaillerons en même temps. ARCTUROS protège l’ours brun et le loup et accueille des ours secourus dans son refuge de Nymfaio. Callisto est une organisation environnementale grecque pour la faune sauvage et la nature. https://www.arcturos.gr
+- **EuroNatur** (Hongrie, Début mai) — Ceinture verte européenne : Une fondation européenne de protection de la nature, qui travaille à faire de l’ancien rideau de fer, de la mer de Barents à la mer Noire, un corridor de nature : la Ceinture verte européenne. https://www.euronatur.org
+- **NABU** (Allemagne, Du 20 juin au 5 juillet environ) — Cigognes et oiseaux : Le NABU est la plus grande association allemande de protection de la nature. Son Michael-Otto-Institut, à Bergenhusen, étudie notamment les cigognes blanches. https://www.nabu.de
+
+## Étapes prévues
+
+1. Grasse — France · départ (Début mars, km 0)
+2. Rewilding Apennines — Région de Florence, Italie (Début mars, km 510)
+3. Ancône — Puis ferry vers Zadar, Croatie (Mi-mars, km 800)
+4. PPNEA — Lynx des Balkans · Albanie (Fin mars, km 1 110)
+5. Tirana — Albanie (Fin mars, km 1 460)
+6. ARCTUROS & Callisto — Région de Florina, Grèce (Début avril, km 1 880)
+7. Sofia — Bulgarie (Mi-avril, km 2 320)
+8. Belgrade — Serbie (Fin avril, km 2 870)
+9. EuroNatur — Région de Szeged, Hongrie (Début mai, km 3 220)
+10. Budapest — Hongrie (Mi-mai, km 3 840)
+11. Vienne — Autriche (Fin mai, km 4 220)
+12. Prague — Tchéquie (Début juin, km 4 560)
+13. Berlin — Allemagne (Mi-juin, km 5 250)
+14. NABU · Michael-Otto-Institut — Bergenhusen, Allemagne (Du 20 juin au 5 juillet environ, km 5 620)
+15. Amsterdam — Pays-Bas (Mi-juillet, km 6 160)
+16. Bruxelles — Belgique (Mi-juillet, km 6 350)
+17. Grasse — France · arrivée (Début août, km 7 520)
+
+## Soutiens
+
+- Komoot — Notre itinéraire est tracé sur Komoot. (https://www.komoot.com)
+
+## Pages
+
+- [Accueil](https://tanguyruel.github.io/triade/)
+- [Sur la route](https://tanguyruel.github.io/triade/route.html)
+- [Associations](https://tanguyruel.github.io/triade/associations.html)
+- [Rencontres](https://tanguyruel.github.io/triade/rencontres.html)
+- [Ils nous soutiennent](https://tanguyruel.github.io/triade/soutiens.html)
+- [Presse](https://tanguyruel.github.io/triade/presse.html)
+
+## Contact
+
+- E-mail : mailto:triade.europe@gmail.com
+- Instagram : https://www.instagram.com/triade.europe
+- TikTok : https://www.tiktok.com/@triade692
+- Komoot : https://www.komoot.com/user/6295100499846
+
+Le site existe en français, anglais, allemand, italien et grec (paramètre ?lang=fr|en|de|it|el).

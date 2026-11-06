@@ -1,3 +1,10 @@
 {
-  "soutiens": []
+  "soutiens": [
+    {
+      "nom": "Komoot",
+      "url": "https://www.komoot.com",
+      "phrase": "Notre itinéraire est tracé sur Komoot.",
+      "logo": "assets/img/soutien-komoot.svg"
+    }
+  ]
 }

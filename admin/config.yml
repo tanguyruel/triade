@@ -51,7 +51,7 @@ collections:
         label: "Bandeau de photos (accueil et associations)"
         file: content/bandeau.json
         fields:
-          - { label: "Secondes entre deux photos", name: intervalle, widget: number, value_type: int, min: 3, max: 20, default: 7 }
+          - { label: "Secondes entre deux photos", name: intervalle, widget: number, value_type: int, min: 3, max: 120, default: 20 }
           - label: "Photos du bandeau"
             name: photos
             widget: list
@@ -60,14 +60,15 @@ collections:
             hint: "Les photos défilent dans cet ordre. « Ajouter » pour une nouvelle photo, la poignée à gauche d'une ligne pour la déplacer, la corbeille pour la retirer. Fonctionne depuis un téléphone. Photo horizontale de préférence."
             fields:
               - { label: "Photo", name: image, widget: image, hint: "Photo horizontale, de préférence sans visage reconnaissable." }
-              - { label: "Lieu", name: lieu, widget: string, required: false, hint: "Affiché en légende. Exemple : Lac de Prespa" }
+              - { label: "Lieu", name: lieu, widget: string, required: false, hint: "Affiché en légende, à droite de la photo. Exemple : Lac de Prespa" }
+              - { label: "Recherche Google Maps", name: maps, widget: string, required: false, hint: "Le lieu devient un lien vers Google Maps. Écrivez ce qu'on taperait dans Google Maps (exemple : Lac de Prespa, Grèce) ou collez l'adresse d'un lieu. Vide = le nom du lieu sert de recherche." }
               - { label: "Étape ou pays", name: etape, widget: string, required: false, hint: "Exemple : Grèce, étape du 8 avril" }
               - { label: "Crédit", name: credit, widget: string, required: false, hint: "Obligatoire si la photo n'est pas de nous. Exemple : Tanguy, ou Nom du photographe · CC BY-SA 4.0" }
               - { label: "Lien du crédit", name: lien, widget: string, required: false, hint: "Page d'origine de la photo, si elle vient d'ailleurs." }
 
   # --------------------------------------------------------------------------
   - name: carnet
-    label: "Journal de bord (photos et récits)"
+    label: "Sur la route : photos et récits"
     icon: edit_note
     files:
       - name: carnet
@@ -155,6 +156,7 @@ collections:
               - { label: "Pays", name: pays, widget: string }
               - { label: "Lieu précis", name: zone, widget: string, required: false }
               - { label: "Espèce ou cause", name: espece, widget: string, hint: "Exemple : Lynx des Balkans" }
+              - { label: "Espèce affichée sur l'accueil", name: espece_accueil, widget: string, required: false, hint: "Seulement pour les petites cartes de l'accueil. Vide = l'espèce ci-dessus. Pour une association à deux logos, séparez les deux espèces par | (exemple : Ours brun|Loup)." }
               - { label: "Quand passons-nous ?", name: periode, widget: string, hint: "Date vague. Exemple : Début avril" }
               - label: "Statut"
                 name: statut
@@ -242,20 +244,21 @@ collections:
           - { label: "Adresse e-mail", name: email, widget: string }
           - { label: "Instagram (adresse complète)", name: instagram, widget: string, required: false, hint: "Exemple : https://www.instagram.com/triade.europe" }
           - { label: "TikTok (adresse complète)", name: tiktok, widget: string, required: false, hint: "Exemple : https://www.tiktok.com/@nom-du-compte. Vide = l'icône TikTok n'apparaît pas." }
+          - { label: "Komoot (adresse complète)", name: komoot, widget: string, required: false, hint: "Exemple : https://www.komoot.com/user/123456. Vide = Komoot n'apparaît pas dans le pied de page." }
           - { label: "YouTube (adresse complète)", name: youtube, widget: string, required: false }
-          - { label: "Polarsteps : lien du voyage", name: polarsteps_url, widget: string, required: false, hint: "Vide = « Le suivi en direct ouvre au départ »." }
+          - { label: "Polarsteps : lien du voyage", name: polarsteps_url, widget: string, required: false, hint: "Vide = « Le suivi en direct ouvre au départ » sur la page « Sur la route »." }
           - { label: "Polarsteps : adresse intégrée (iframe)", name: polarsteps_embed, widget: string, required: false, hint: "Facultatif. Si rempli, la carte Polarsteps s'affiche dans la page." }
 
   # --------------------------------------------------------------------------
   - name: equipe
-    label: "Équipe"
-    icon: groups
+    label: "L'équipe (portraits de l'accueil)"
+    icon: group
     files:
       - name: equipe
-        label: "L'équipe"
+        label: "Les trois membres"
         file: content/equipe.json
         fields:
-          - { label: "Texte de présentation", name: intro, widget: text }
+          - { label: "Présentation", name: intro, widget: text, required: false }
           - label: "Membres"
             name: membres
             widget: list
@@ -263,14 +266,14 @@ collections:
             summary: "{{fields.prenom}} {{fields.nom}}"
             fields:
               - { label: "Prénom", name: prenom, widget: string }
-              - { label: "Nom", name: nom, widget: string }
-              - { label: "Photo", name: photo, widget: image, required: false }
+              - { label: "Nom", name: nom, widget: string, required: false }
+              - { label: "Portrait", name: photo, widget: image, hint: "Photo carrée (elle s'affiche en rond), visage centré." }
               - { label: "Rôle", name: role, widget: string, required: false }
-              - { label: "Petite présentation", name: bio, widget: text, required: false }
+              - { label: "Mot court", name: bio, widget: text, required: false }
 
   # --------------------------------------------------------------------------
   - name: soutiens
-    label: "Ils nous aident (soutiens)"
+    label: "Sponsors et soutiens"
     icon: handshake
     files:
       - name: soutiens
@@ -282,7 +285,7 @@ collections:
             widget: list
             label_singular: "soutien"
             summary: "{{fields.nom}}"
-            hint: "À remplir seulement après accord écrit de la personne ou de la structure. Tant que la liste est vide, l'entrée « Ils nous aident » n'apparaît pas dans le menu."
+            hint: "À remplir seulement après accord de la personne ou de la structure. Chaque soutien apparaît sur la page « Ils nous soutiennent » ; un emplacement « D'autres soutiens bientôt » reste toujours affiché à la suite."
             fields:
               - { label: "Nom", name: nom, widget: string }
               - { label: "Ville", name: ville, widget: string, required: false }
