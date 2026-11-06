@@ -565,3 +565,6 @@ a.logo-tile { text-decoration: none; }
 
 /* Page Associations : les dessins débordent au-dessus de la première carte ; la légende de la photo (crédit obligatoire) reste au-dessus d'eux */
 body[data-page="associations"] .bandeau-legende { bottom: 56px; }
+
+/* Presse : respiration sous les petits titres */
+h2.h3 { margin-bottom: 10px; }

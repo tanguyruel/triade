@@ -303,7 +303,7 @@
         h('div', {}, h('img', { src: 'assets/img/logo-creme.png', alt: 'TRIADE', width: 85, height: 84, onerror: (e) => e.target.remove() }),
           h('p', { class: 'small' }, 'Three Riders In Adventure Discovering Europe.'),
           h('p', { class: 'small' }, t('foot_project')),
-          link('https://institut-agro-montpellier.fr', { class: 'school-chip', 'aria-label': 'L’Institut Agro Montpellier' },
+          link('https://www.institut-agro-montpellier.fr', { class: 'school-chip', 'aria-label': 'L’Institut Agro Montpellier' },
             h('img', { src: 'assets/img/logo-institut-agro.webp', alt: 'L’Institut Agro Montpellier', width: 104, height: 40, loading: 'lazy', onerror: (e) => e.target.parentElement.remove() }))),
         h('div', {}, h('h2', {}, t('foot_site')), h('ul', {}, NAV.map(([id, key]) => h('li', {}, h('a', { href: `${id}.html` }, t(key)))),
           h('li', {}, h('a', { href: 'presse.html' }, t('nav_press'))),
