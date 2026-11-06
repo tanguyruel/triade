@@ -665,7 +665,7 @@
 
   /* ---------- Démarrage ----------------------------------------------- */
   // Dessins à l'encre et à l'aquarelle (assets/illustrations/) : dimensions réelles pour éviter les sauts de mise en page.
-  const ILLU = { 'arbre': [390, 534], 'cigogne': [322, 534], 'loup': [352, 415], 'lynx-balkans': [376, 453], 'oiseaux-allemagne': [415, 497], 'ours-marsican': [380, 463], 'phoque-moine': [417, 344], 'vegetation': [377, 536] };
+  const ILLU = { 'arbre': [390, 534], 'cigogne': [322, 534], 'loup': [352, 415], 'lynx-balkans': [376, 453], 'oiseaux-allemagne': [415, 497], 'ours-marsican': [760, 487], 'ours-brun': [380, 463], 'phoque-moine': [417, 344], 'vegetation': [377, 536] };
   const illu = (nom, alt, cls) => ILLU[nom] ? h('img', { class: `illu ${cls || ''}`.trim(), src: `assets/illustrations/${nom}.webp`, alt: alt || '', width: ILLU[nom][0], height: ILLU[nom][1], loading: 'lazy', decoding: 'async' }) : null;
 
   // Bandeau : paysages qui glissent d'une photo à la suivante (content/bandeau.json, modifiable dans l'Espace équipe).

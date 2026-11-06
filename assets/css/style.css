@@ -562,3 +562,6 @@ a.logo-tile { text-decoration: none; }
 .head--centre { margin-inline: auto; text-align: center; }
 .head--suite { margin-top: clamp(40px, 6vw, 72px); }
 .section--projet .more { text-align: center; }
+
+/* Page Associations : les dessins débordent au-dessus de la première carte ; la légende de la photo (crédit obligatoire) reste au-dessus d'eux */
+body[data-page="associations"] .bandeau-legende { bottom: 56px; }

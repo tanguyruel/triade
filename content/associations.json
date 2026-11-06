@@ -12,8 +12,7 @@
       "site": "https://rewilding-apennines.com",
       "don_url": "",
       "illustration": "ours-marsican",
-      "illustration_alt": "Aquarelle d’un ours brun marsicain",
-      "espece_accueil": "Loup"
+      "illustration_alt": "Aquarelle d’un ours brun marsicain"
     },
     {
       "nom": "PPNEA",
@@ -33,15 +32,15 @@
       "nom": "ARCTUROS & Callisto",
       "pays": "Grèce",
       "zone": "Région de Florina (Nymfaio) et Thessalonique",
-      "espece": "Ours brun et loup",
+      "espece": "Ours brun",
       "periode": "Début avril",
       "statut": "Contact en cours",
       "logo": "assets/img/asso-arcturos.webp",
       "description": "Deux associations grecques qui travaillent ensemble, et avec lesquelles nous travaillerons en même temps. ARCTUROS protège l’ours brun et le loup et accueille des ours secourus dans son refuge de Nymfaio. Callisto est une organisation environnementale grecque pour la faune sauvage et la nature.",
       "site": "https://www.arcturos.gr",
       "don_url": "",
-      "illustration": "loup",
-      "illustration_alt": "Aquarelle d’un loup gris",
+      "illustration": "ours-brun",
+      "illustration_alt": "Aquarelle d’un ours brun",
       "logo2": "assets/img/asso-callisto.webp",
       "logo2_alt": "Callisto, organisation grecque pour la faune sauvage et la nature",
       "site2": "https://callisto.gr/en/",
