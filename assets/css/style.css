@@ -407,16 +407,13 @@ body { position: relative; }
 .bandeau--vide { background: var(--cream); color: var(--ink); }   /* sans photo : fond crème et dessins */
 .bandeau--vide::before { display: none; }
 /* Légende de la photo : à droite de l'image, petite, centrée (lieu = lien Google Maps, puis étape, puis crédit) */
-.bandeau-legende { position: absolute; z-index: 2; left: 0; right: 0; bottom: 12px; margin: 0 auto; width: min(92%, 30rem); display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; font-size: .72rem; line-height: 1.35; color: rgba(247, 244, 235, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .55); }
+.bandeau-legende { position: absolute; z-index: 2; left: auto; right: clamp(12px, 2vw, 34px); bottom: 14px; margin: 0; width: min(70%, 18rem); display: flex; flex-direction: column; align-items: center; gap: 3px; text-align: center; font-size: .72rem; line-height: 1.35; color: rgba(247, 244, 235, .92); text-shadow: 0 1px 6px rgba(0, 0, 0, .55); }
 .bandeau-legende .lieu { display: inline-flex; align-items: center; justify-content: center; gap: 5px; font-weight: 600; font-size: .78rem; letter-spacing: .02em; color: #fff; text-decoration: none; }
 .bandeau-legende a.lieu:hover { text-decoration: underline; text-underline-offset: 3px; color: #fff; }
 .bandeau-legende .lieu svg { width: 13px; height: 13px; flex: none; }
 .bandeau-legende .etape { opacity: .95; }
 .bandeau-legende .credit { font-size: .66rem; opacity: .8; }
 .bandeau-legende a { color: inherit; }
-@media (min-width: 1360px) {
-  .bandeau-legende { left: auto; right: clamp(14px, 1.8vw, 34px); bottom: auto; top: 50%; transform: translateY(-50%); margin: 0; width: clamp(150px, 11.5vw, 190px); }
-}
 
 /* --- Accueil : grand TRIADE et explication du sigle --- */
 .hero--bandeau { padding: 0; min-height: clamp(560px, 86vh, 780px); display: flex; align-items: center; text-align: center; }
