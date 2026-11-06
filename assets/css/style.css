@@ -568,3 +568,7 @@ body[data-page="associations"] .bandeau-legende { bottom: 56px; }
 
 /* Presse : respiration sous les petits titres */
 h2.h3 { margin-bottom: 10px; }
+
+/* Bandeau des pages intérieures : plus d'air entre titre et texte, titre plus lisible sur la photo */
+.bandeau--page .h1 { text-shadow: 0 2px 18px rgba(0, 0, 0, .45); }
+.bandeau--page .lede { margin-top: 16px; }
