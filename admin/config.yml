@@ -18,9 +18,9 @@ backend:
     deleteMedia: "Site : suppression de la photo {{path}}"
 
 locale: fr
-site_url: https://triade-europe.com/
-display_url: https://triade-europe.com/
-logo_url: https://triade-europe.com/assets/img/logo-triade.png
+site_url: https://triade-europe.vercel.app/
+display_url: https://triade-europe.vercel.app/
+logo_url: https://triade-europe.vercel.app/assets/img/logo-triade.png
 
 # Où vont les photos envoyées depuis l'éditeur.
 # Elles sont automatiquement réduites (2000 px max) et converties en WebP :

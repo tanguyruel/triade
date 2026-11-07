@@ -2,7 +2,7 @@
 
 > Three Riders In Adventure Discovering Europe : trois étudiants de l’Institut Agro Montpellier traversent l’Europe à vélo (de mars à août 2027) pour rencontrer six associations de protection de la nature.
 
-Site : https://triade-europe.com/
+Site : https://triade-europe.vercel.app/
 
 ## Le projet
 
@@ -44,12 +44,12 @@ Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, n
 
 ## Pages
 
-- [Accueil](https://triade-europe.com/)
-- [Sur la route](https://triade-europe.com/route.html)
-- [Associations](https://triade-europe.com/associations.html)
-- [Rencontres](https://triade-europe.com/rencontres.html)
-- [Ils nous soutiennent](https://triade-europe.com/soutiens.html)
-- [Presse](https://triade-europe.com/presse.html)
+- [Accueil](https://triade-europe.vercel.app/)
+- [Sur la route](https://triade-europe.vercel.app/route.html)
+- [Associations](https://triade-europe.vercel.app/associations.html)
+- [Rencontres](https://triade-europe.vercel.app/rencontres.html)
+- [Ils nous soutiennent](https://triade-europe.vercel.app/soutiens.html)
+- [Presse](https://triade-europe.vercel.app/presse.html)
 
 ## Contact
 
