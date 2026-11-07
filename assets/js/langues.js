@@ -254,12 +254,13 @@
   C(`Puis ferry vers Zadar, Croatie`, `Then ferry to Zadar, Croatia`, `Dann Fähre nach Zadar, Kroatien`, `Poi traghetto per Zara, Croazia`, `Στη συνέχεια πλοίο για το Ζαντάρ, Κροατία`);
   C(`Lynx des Balkans · Albanie`, `Balkan lynx · Albania`, `Balkanluchs · Albanien`, `Lince dei Balcani · Albania`, `Λύγκας των Βαλκανίων · Αλβανία`);
   C(`Région de Florina, Grèce`, `Florina region, Greece`, `Region Florina, Griechenland`, `Zona di Florina, Grecia`, `Περιοχή Φλώρινας, Ελλάδα`);
-  C(`Région de Szeged, Hongrie`, `Szeged region, Hungary`, `Region Szeged, Ungarn`, `Zona di Szeged, Ungheria`, `Περιοχή Σέγκεντ, Ουγγαρία`);
   C(`Bergenhusen, Allemagne`, `Bergenhusen, Germany`, `Bergenhusen, Deutschland`, `Bergenhusen, Germania`, `Μπέργκενχουζεν, Γερμανία`);
 
   // Périodes
   C(`Début mars`, `Early March`, `Anfang März`, `Inizio marzo`, `Αρχές Μαρτίου`);
   C(`Mi-mars`, `Mid-March`, `Mitte März`, `Metà marzo`, `Μέσα Μαρτίου`);
+  C(`Tout le long du trajet`, `All along the route`, `Auf der gesamten Strecke`, `Lungo tutto il percorso`, `Σε όλη τη διαδρομή`);
+  C(`Croatie, puis tout le long du trajet`, `Croatia, then all along the route`, `Kroatien, dann auf der gesamten Strecke`, `Croazia, poi lungo tutto il percorso`, `Κροατία, και στη συνέχεια σε όλη τη διαδρομή`);
   C(`Fin mars`, `Late March`, `Ende März`, `Fine marzo`, `Τέλη Μαρτίου`);
   C(`Début avril`, `Early April`, `Anfang April`, `Inizio aprile`, `Αρχές Απριλίου`);
   C(`Mi-avril`, `Mid-April`, `Mitte April`, `Metà aprile`, `Μέσα Απριλίου`);
@@ -292,7 +293,6 @@
   C(`Cigognes et oiseaux`, `Storks and birds`, `Störche und Vögel`, `Cicogne e uccelli`, `Πελαργοί και πουλιά`);
   C(`Apennins centraux, région de Florence`, `Central Apennines, Florence region`, `Zentralapennin, Region Florenz`, `Appennino centrale, zona di Firenze`, `Κεντρικοί Απέννινοι, περιοχή Φλωρεντίας`);
   C(`Région de Florina (Nymfaio) et Thessalonique`, `Florina region (Nymfaio) and Thessaloniki`, `Region Florina (Nymfaio) und Thessaloniki`, `Zona di Florina (Nymfaio) e Salonicco`, `Περιοχή Φλώρινας (Νυμφαίο) και Θεσσαλονίκη`);
-  C(`Région de Szeged`, `Szeged region`, `Region Szeged`, `Zona di Szeged`, `Περιοχή Σέγκεντ`);
 
   // Associations : présentations
   C(`Une association qui œuvre au retour d’une nature sauvage dans les Apennins centraux, où vit l’ours brun marsicain, l’un des ours les plus menacés d’Europe.`,

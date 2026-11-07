@@ -2,7 +2,7 @@
 
 > Three Riders In Adventure Discovering Europe : trois étudiants de l’Institut Agro Montpellier traversent l’Europe à vélo (de mars à août 2027) pour rencontrer six associations de protection de la nature.
 
-Site : https://tanguyruel.github.io/triade/
+Site : https://triade.europe.com/
 
 ## Le projet
 
@@ -15,7 +15,7 @@ Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, n
 - **Rewilding Apennines** (Italie, Début mars) — Ours brun marsicain : Une association qui œuvre au retour d’une nature sauvage dans les Apennins centraux, où vit l’ours brun marsicain, l’un des ours les plus menacés d’Europe. https://rewilding-apennines.com
 - **PPNEA** (Albanie, Fin mars) — Lynx des Balkans : Protection and Preservation of Natural Environment in Albania : une association albanaise de protection de la nature, engagée notamment pour le lynx des Balkans, un des félins les plus rares d’Europe. https://ppnea.org
 - **ARCTUROS & Callisto** (Grèce, Début avril) — Ours brun : Deux associations grecques qui travaillent ensemble, et avec lesquelles nous travaillerons en même temps. ARCTUROS protège l’ours brun et le loup et accueille des ours secourus dans son refuge de Nymfaio. Callisto est une organisation environnementale grecque pour la faune sauvage et la nature. https://www.arcturos.gr
-- **EuroNatur** (Hongrie, Début mai) — Ceinture verte européenne : Une fondation européenne de protection de la nature, qui travaille à faire de l’ancien rideau de fer, de la mer de Barents à la mer Noire, un corridor de nature : la Ceinture verte européenne. https://www.euronatur.org
+- **EuroNatur** (Croatie, Tout le long du trajet) — Ceinture verte européenne : Une fondation européenne de protection de la nature, qui travaille à faire de l’ancien rideau de fer, de la mer de Barents à la mer Noire, un corridor de nature : la Ceinture verte européenne. https://www.euronatur.org
 - **NABU** (Allemagne, Du 20 juin au 5 juillet environ) — Cigognes et oiseaux : Le NABU est la plus grande association allemande de protection de la nature. Son Michael-Otto-Institut, à Bergenhusen, étudie notamment les cigognes blanches. https://www.nabu.de
 
 ## Étapes prévues
@@ -23,12 +23,12 @@ Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, n
 1. Grasse — France · départ (Début mars, km 0)
 2. Rewilding Apennines — Région de Florence, Italie (Début mars, km 510)
 3. Ancône — Puis ferry vers Zadar, Croatie (Mi-mars, km 800)
-4. PPNEA — Lynx des Balkans · Albanie (Fin mars, km 1 110)
-5. Tirana — Albanie (Fin mars, km 1 460)
-6. ARCTUROS & Callisto — Région de Florina, Grèce (Début avril, km 1 880)
-7. Sofia — Bulgarie (Mi-avril, km 2 320)
-8. Belgrade — Serbie (Fin avril, km 2 870)
-9. EuroNatur — Région de Szeged, Hongrie (Début mai, km 3 220)
+4. EuroNatur — Croatie, puis tout le long du trajet (Tout le long du trajet)
+5. PPNEA — Lynx des Balkans · Albanie (Fin mars, km 1 110)
+6. Tirana — Albanie (Fin mars, km 1 460)
+7. ARCTUROS & Callisto — Région de Florina, Grèce (Début avril, km 1 880)
+8. Sofia — Bulgarie (Mi-avril, km 2 320)
+9. Belgrade — Serbie (Fin avril, km 2 870)
 10. Budapest — Hongrie (Mi-mai, km 3 840)
 11. Vienne — Autriche (Fin mai, km 4 220)
 12. Prague — Tchéquie (Début juin, km 4 560)
@@ -44,12 +44,12 @@ Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, n
 
 ## Pages
 
-- [Accueil](https://tanguyruel.github.io/triade/)
-- [Sur la route](https://tanguyruel.github.io/triade/route.html)
-- [Associations](https://tanguyruel.github.io/triade/associations.html)
-- [Rencontres](https://tanguyruel.github.io/triade/rencontres.html)
-- [Ils nous soutiennent](https://tanguyruel.github.io/triade/soutiens.html)
-- [Presse](https://tanguyruel.github.io/triade/presse.html)
+- [Accueil](https://triade.europe.com/)
+- [Sur la route](https://triade.europe.com/route.html)
+- [Associations](https://triade.europe.com/associations.html)
+- [Rencontres](https://triade.europe.com/rencontres.html)
+- [Ils nous soutiennent](https://triade.europe.com/soutiens.html)
+- [Presse](https://triade.europe.com/presse.html)
 
 ## Contact
 

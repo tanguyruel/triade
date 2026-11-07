@@ -11,4 +11,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://tanguyruel.github.io/triade/sitemap.xml
+Sitemap: https://triade.europe.com/sitemap.xml
