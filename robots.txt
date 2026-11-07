@@ -11,4 +11,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://triade.europe.com/sitemap.xml
+Sitemap: https://triade-europe.com/sitemap.xml

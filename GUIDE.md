@@ -4,7 +4,7 @@ Ce guide est pour toi qui gères la communication. **Tu n'as pas besoin de savoi
 Tout se fait dans un « espace équipe » qui ressemble à un formulaire : tu remplis des cases, tu cliques sur « Enregistrer », et le site se met à jour tout seul en 1 à 2 minutes.
 
 L'espace équipe se trouve à l'adresse du site suivie de `/admin/`
-(exemple : `https://triade.europe.com/admin/`). Il marche très bien depuis un téléphone.
+(exemple : `https://triade-europe.com/admin/`). Il marche très bien depuis un téléphone.
 
 ---
 
