@@ -489,7 +489,7 @@
 
     // 1. En direct : où sommes-nous, et la carte Polarsteps
     $('#position').replaceChildren(
-      h('small', {}, t('pos_where')), h('b', {}, pos ? pos.texte : t('pos_none')),
+      h('b', {}, pos ? pos.texte : t('pos_none')),
       h('div', { class: 'muted small' }, pos ? t('pos_updated', { d: pos.maj }) : t('pos_start')));
     const ps = $('#polarsteps');
     const embed = r.polarsteps_embed ? safeUrl(r.polarsteps_embed) : '';
@@ -539,6 +539,7 @@
       const e = id && jours.find((x) => entryId(x) === id);
       autres.forEach((s) => { s.hidden = Boolean(e); });
       tete.hidden = Boolean(e);
+      $('#photos').hidden = !e && !jours.length;   // pas de section vide avant le départ
       if (e) { article(e); window.scrollTo(0, 0); } else { grid(); scrollToHash(); }
     };
     addEventListener('hashchange', () => { render(); reveal(); });
@@ -572,7 +573,7 @@
         h('div', { class: 'asso-side' },
           x.logo ? h('div', { class: 'asso-logos' }, h('img', { src: asset(x.logo), alt: x.logo2 ? first : x.nom, loading: 'lazy' }),
             x.logo2 ? [h('span', { class: 'logo-plus', 'aria-hidden': 'true' }, '+'), h('img', { src: asset(x.logo2), alt: x.logo2_alt || '', loading: 'lazy' })] : null) : null,
-          h('div', {}, statut(x.statut || 'Contact en cours'), h('p', { class: 'small muted', style: 'margin:10px 0 0' }, tc(x.periode)))),
+          h('div', {}, x.statut && x.statut !== 'Contact en cours' ? statut(x.statut) : null, h('p', { class: 'small muted', style: x.statut && x.statut !== 'Contact en cours' ? 'margin:10px 0 0' : 'margin:0' }, tc(x.periode)))),
         h('div', { class: 'asso-main' },
           illu(x.illustration, x.illustration_alt, 'asso-art'),
           h('div', { class: 'asso-tete' },

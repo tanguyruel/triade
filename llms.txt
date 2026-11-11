@@ -6,7 +6,7 @@ Site : https://triade-europe.vercel.app/
 
 ## Le projet
 
-Nous sommes trois étudiants de l’Institut Agro Montpellier. Pendant 6 mois, nous traversons l’Europe à vélo pour rencontrer six associations qui protègent des espèces menacées (ours, lynx, loup, cigognes) et raconter leur travail.
+Nous étudions à l’Institut Agro Montpellier. Pendant 6 mois, nous pédalons d’une association à l’autre pour découvrir leur travail de terrain.
 
 3 étudiants, 6 associations, 7 500 km prévus, 18 pays prévus, de mars à août 2027 (départ début mars 2027).
 
