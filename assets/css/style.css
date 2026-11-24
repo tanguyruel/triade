@@ -561,6 +561,7 @@ a.logo-tile { text-decoration: none; }
 .tetes b { font-weight: 600; }
 .trio { margin: 32px auto 0; max-width: 760px; }
 .trio img { width: 100%; height: auto; display: block; border-radius: 16px; box-shadow: 0 10px 30px rgba(20, 54, 42, .14); }
+.trio figcaption { margin-top: 14px; text-align: center; font-weight: 600; }
 .head--centre { margin-inline: auto; text-align: center; }
 .head--suite { margin-top: clamp(40px, 6vw, 72px); }
 .section--projet .more { text-align: center; }
