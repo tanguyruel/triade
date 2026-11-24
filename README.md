@@ -1,6 +1,6 @@
 # TRIADE — site web
 
-🌍 **Site en ligne : <http://triade-europe.fr>**
+🌍 **Site en ligne : <https://triade-europe.fr>**
 
 Site de **TRIADE** (*Three Riders In Adventure Discovering Europe*) : trois étudiants de l'Institut Agro Montpellier traversent l'Europe à vélo, de mars à août 2027, à la rencontre de six associations de protection de la biodiversité.
 
